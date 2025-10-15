@@ -1,11 +1,15 @@
+import React, { useState } from 'react';
+import GradeSidebar from '../../components/Sidebar/GradeSidebar';
+import GradeMain from '../../components/MainContent/GradeMain';
+
 const GeneralCreditPage = () => {
+  const [selected, setSelected] = useState<'total' | 'major' | 'general'>('general');
+
   return (
-    <section className="main-content">
-      <div className="title">교양학점</div>
-      <div className="dashboard-box">
-        <p>교양학점 관련 대시보드를 여기에 임베드합니다.</p>
-      </div>
-    </section>
+    <div style={{ display: 'flex' }}>
+      <GradeSidebar selected={selected} onSelect={setSelected} />
+      <GradeMain selected={selected} onSelect={setSelected} />
+    </div>
   );
 };
 

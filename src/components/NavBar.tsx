@@ -6,16 +6,15 @@ const NavBar = () => {
   const menuItems = [
     {
       name: '입학',
-      path: '/admission',
+      path: '/admission/freshman-recruit', // 첫 번째 하위메뉴로 자동 이동
       submenu: [
         { name: '신입생 충원', path: '/admission/freshman-recruit' },
-        { name: '신입생 성적', path: '/admission/freshman-grade' },
-        { name: '입학', path: '/admission' }
+        { name: '신입생 성적', path: '/admission/freshman-grade' }
       ]
     },
     {
       name: '학적',
-      path: '/academic',
+      path: '/academic/leave-return', // 첫 번째 하위메뉴로 자동 이동
       submenu: [
         { name: '휴/복학', path: '/academic/leave-return' },
         { name: '자퇴', path: '/academic/dropout' },
@@ -26,7 +25,7 @@ const NavBar = () => {
     },
     {
       name: '성적',
-      path: '/grade',
+      path: '/grade/total', // 첫 번째 하위메뉴로 자동 이동
       submenu: [
         { name: '전체 학점', path: '/grade/total' },
         { name: '전공 학점', path: '/grade/major' },
@@ -35,7 +34,7 @@ const NavBar = () => {
     },
     {
       name: '졸업',
-      path: '/graduate',
+      path: '/graduate/undergrad', // 첫 번째 하위메뉴로 자동 이동
       submenu: [
         { name: '졸업생', path: '/graduate/undergrad' },
         { name: '대학원', path: '/graduate/grad-school' }
@@ -43,7 +42,7 @@ const NavBar = () => {
     },
     {
       name: '기타',
-      path: '/etc',
+      path: '/etc/edu-satisfaction', // 첫 번째 하위메뉴로 자동 이동
       submenu: [
         { name: '교육 만족도', path: '/etc/edu-satisfaction' },
         { name: '교직원 현황', path: '/etc/staff' }

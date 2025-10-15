@@ -3,7 +3,7 @@ import AdmissionSidebar from '../components/Sidebar/AdmissionSidebar';
 import AdmissionMain from '../components/MainContent/AdmissionMain';
 
 const AdmissionPage = () => {
-  const [selected, setSelected] = useState<'major' | 'exam'>('major');
+  const [selected, setSelected] = useState<'major' | 'exam'>('major'); // 첫 번째 항목이 기본값
 
   return (
     <div style={{ display: 'flex' }}>

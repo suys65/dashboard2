@@ -1,11 +1,15 @@
+import React, { useState } from 'react';
+import EtcSidebar from '../../components/Sidebar/EtcSidebar';
+import EtcMain from '../../components/MainContent/EtcMain';
+
 const StaffStatusPage = () => {
+  const [selected, setSelected] = useState<'satisfaction' | 'staff'>('staff');
+
   return (
-    <section className="main-content">
-      <div className="title">교직원 현황</div>
-      <div className="dashboard-box">
-        <p>교직원 현황 관련 대시보드를 여기에 임베드합니다.</p>
-      </div>
-    </section>
+    <div style={{ display: 'flex' }}>
+      <EtcSidebar selected={selected} onSelect={setSelected} />
+      <EtcMain selected={selected} onSelect={setSelected} />
+    </div>
   );
 };
 

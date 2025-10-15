@@ -1,11 +1,15 @@
+import React, { useState } from 'react';
+import AcademicSidebar from '../../components/Sidebar/AcademicSidebar';
+import AcademicMain from '../../components/MainContent/AcademicMain';
+
 const InterdisciplinaryPage = () => {
+  const [selected, setSelected] = useState<'leave' | 'dropout' | 'transfer' | 'double' | 'inter'>('inter');
+
   return (
-    <section className="main-content">
-      <div className="title">연계융합전공</div>
-      <div className="dashboard-box">
-        <p>연계융합전공 관련 대시보드를 여기에 임베드합니다.</p>
-      </div>
-    </section>
+    <div style={{ display: 'flex' }}>
+      <AcademicSidebar selected={selected} onSelect={setSelected} />
+      <AcademicMain selected={selected} onSelect={setSelected} />
+    </div>
   );
 };
 

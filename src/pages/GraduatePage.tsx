@@ -3,7 +3,7 @@ import GraduateSidebar from '../components/Sidebar/GraduateSidebar';
 import GraduateMain from '../components/MainContent/GraduateMain';
 
 const GraduatePage = () => {
-  const [selected, setSelected] = useState<'undergrad' | 'gradschool'>('undergrad');
+  const [selected, setSelected] = useState<'undergrad' | 'gradschool'>('undergrad'); // 첫 번째 항목이 기본값
 
   return (
     <div style={{ display: 'flex' }}>

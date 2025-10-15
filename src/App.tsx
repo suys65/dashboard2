@@ -1,11 +1,13 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { AuthProvider } from './contexts/AuthContext';
+import ProtectedRoute from './components/ProtectedRoute';
 import AdmissionPage from './pages/AdmissionPage';
 import AcademicPage from './pages/AcademicPage';
 import GradePage from './pages/GradePage';
 import GraduatePage from './pages/GraduatePage';
 import EtcPage from './pages/EtcPage';
 import Header from './components/header';
-import TableauEmbed from './components/tableauEmbed';
+import SupersetEmbed from './components/supersetEmbed';
 import './styles/styles.css';
 // Admission sub pages
 import FreshmanRecruitPage from './pages/admission/FreshmanRecruitPage';
@@ -32,45 +34,165 @@ import GoogleFailPage from './pages/auth/GoogleFailPage';
 
 function App() {
   return (
-    <Router>
-      <Header />
-      <Routes>
-        <Route path="/admission" element={<AdmissionPage />} />
-        <Route path="/academic" element={<AcademicPage />} />
-        <Route path="/grade" element={<GradePage />} />
-        <Route path="/graduate" element={<GraduatePage />} />
-        <Route path="/etc" element={<EtcPage />} />
-        {/* Admission */}
-        <Route path="/admission/freshman-recruit" element={<FreshmanRecruitPage />} />
-        <Route path="/admission/freshman-grade" element={<FreshmanGradePage />} />
-        {/* Academic */}
-        <Route path="/academic/leave-return" element={<LeaveReturnPage />} />
-        <Route path="/academic/dropout" element={<DropoutPage />} />
-        <Route path="/academic/transfer" element={<TransferPage />} />
-        <Route path="/academic/double-major" element={<DoubleMajorPage />} />
-        <Route path="/academic/interdisciplinary" element={<InterdisciplinaryPage />} />
-        {/* Grade */}
-        <Route path="/grade/total" element={<TotalCreditPage />} />
-        <Route path="/grade/major" element={<MajorCreditPage />} />
-        <Route path="/grade/general" element={<GeneralCreditPage />} />
-        {/* Graduate */}
-        <Route path="/graduate/undergrad" element={<UndergradPage />} />
-        <Route path="/graduate/grad-school" element={<GradSchoolPage />} />
-        {/* ETC */}
-        <Route path="/etc/edu-satisfaction" element={<EduSatisfactionPage />} />
-        <Route path="/etc/staff" element={<StaffStatusPage />} />
-        {/* Auth */}
-        <Route path="/login" element={<LoginPage />} />
-        <Route path="/auth/google/success" element={<GoogleSuccessPage />} />
-        <Route path="/auth/google/fail" element={<GoogleFailPage />} />
-        <Route path="/" element={
-          <section className="start-content">
-            <div id="title" className="title">신입생 및 재학생 현황</div>
-            <TableauEmbed />
-          </section>
-        } />
-      </Routes>
-    </Router>
+    <AuthProvider>
+      <Router>
+        <Routes>
+          {/* 로그인 페이지는 보호되지 않음 */}
+          <Route path="/login" element={<LoginPage />} />
+          <Route path="/auth/google/success" element={<GoogleSuccessPage />} />
+          <Route path="/auth/google/fail" element={<GoogleFailPage />} />
+          
+          {/* 모든 다른 페이지는 보호됨 */}
+          <Route path="/" element={
+            <ProtectedRoute>
+              <Header />
+              <section className="start-content">
+                <div id="title" className="title">신입생 및 재학생 현황</div>
+                <SupersetEmbed />
+              </section>
+            </ProtectedRoute>
+          } />
+          
+          <Route path="/admission" element={
+            <ProtectedRoute>
+              <Header />
+              <AdmissionPage />
+            </ProtectedRoute>
+          } />
+          
+          <Route path="/academic" element={
+            <ProtectedRoute>
+              <Header />
+              <AcademicPage />
+            </ProtectedRoute>
+          } />
+          
+          <Route path="/grade" element={
+            <ProtectedRoute>
+              <Header />
+              <GradePage />
+            </ProtectedRoute>
+          } />
+          
+          <Route path="/graduate" element={
+            <ProtectedRoute>
+              <Header />
+              <GraduatePage />
+            </ProtectedRoute>
+          } />
+          
+          <Route path="/etc" element={
+            <ProtectedRoute>
+              <Header />
+              <EtcPage />
+            </ProtectedRoute>
+          } />
+          
+          {/* Admission 하위 페이지들 */}
+          <Route path="/admission/freshman-recruit" element={
+            <ProtectedRoute>
+              <Header />
+              <FreshmanRecruitPage />
+            </ProtectedRoute>
+          } />
+          
+          <Route path="/admission/freshman-grade" element={
+            <ProtectedRoute>
+              <Header />
+              <FreshmanGradePage />
+            </ProtectedRoute>
+          } />
+          
+          {/* Academic 하위 페이지들 */}
+          <Route path="/academic/leave-return" element={
+            <ProtectedRoute>
+              <Header />
+              <LeaveReturnPage />
+            </ProtectedRoute>
+          } />
+          
+          <Route path="/academic/dropout" element={
+            <ProtectedRoute>
+              <Header />
+              <DropoutPage />
+            </ProtectedRoute>
+          } />
+          
+          <Route path="/academic/transfer" element={
+            <ProtectedRoute>
+              <Header />
+              <TransferPage />
+            </ProtectedRoute>
+          } />
+          
+          <Route path="/academic/double-major" element={
+            <ProtectedRoute>
+              <Header />
+              <DoubleMajorPage />
+            </ProtectedRoute>
+          } />
+          
+          <Route path="/academic/interdisciplinary" element={
+            <ProtectedRoute>
+              <Header />
+              <InterdisciplinaryPage />
+            </ProtectedRoute>
+          } />
+          
+          {/* Grade 하위 페이지들 */}
+          <Route path="/grade/total" element={
+            <ProtectedRoute>
+              <Header />
+              <TotalCreditPage />
+            </ProtectedRoute>
+          } />
+          
+          <Route path="/grade/major" element={
+            <ProtectedRoute>
+              <Header />
+              <MajorCreditPage />
+            </ProtectedRoute>
+          } />
+          
+          <Route path="/grade/general" element={
+            <ProtectedRoute>
+              <Header />
+              <GeneralCreditPage />
+            </ProtectedRoute>
+          } />
+          
+          {/* Graduate 하위 페이지들 */}
+          <Route path="/graduate/undergrad" element={
+            <ProtectedRoute>
+              <Header />
+              <UndergradPage />
+            </ProtectedRoute>
+          } />
+          
+          <Route path="/graduate/grad-school" element={
+            <ProtectedRoute>
+              <Header />
+              <GradSchoolPage />
+            </ProtectedRoute>
+          } />
+          
+          {/* ETC 하위 페이지들 */}
+          <Route path="/etc/edu-satisfaction" element={
+            <ProtectedRoute>
+              <Header />
+              <EduSatisfactionPage />
+            </ProtectedRoute>
+          } />
+          
+          <Route path="/etc/staff" element={
+            <ProtectedRoute>
+              <Header />
+              <StaffStatusPage />
+            </ProtectedRoute>
+          } />
+        </Routes>
+      </Router>
+    </AuthProvider>
   );
 }
 

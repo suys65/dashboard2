@@ -1,11 +1,15 @@
+import React, { useState } from 'react';
+import AdmissionSidebar from '../../components/Sidebar/AdmissionSidebar';
+import AdmissionMain from '../../components/MainContent/AdmissionMain';
+
 const FreshmanRecruitPage = () => {
+  const [selected, setSelected] = useState<'major' | 'exam'>('major'); // 신입생 충원은 major 선택
+
   return (
-    <section className="main-content">
-      <div className="title">신입생 충원</div>
-      <div className="dashboard-box">
-        <p>신입생 충원 현황 대시보드를 여기에 임베드합니다.</p>
-      </div>
-    </section>
+    <div style={{ display: 'flex' }}>
+      <AdmissionSidebar selected={selected} onSelect={setSelected} />
+      <AdmissionMain selected={selected} onSelect={setSelected} />
+    </div>
   );
 };
 

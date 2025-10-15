@@ -1,17 +1,20 @@
 import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { useAuth } from '../../contexts/AuthContext';
 
 const GoogleSuccessPage = () => {
   const navigate = useNavigate();
+  const { login } = useAuth();
 
   useEffect(() => {
-    // 구글 로그인 성공 시 대시보드로 이동
+    // 구글 로그인 성공 시 인증 상태 업데이트 후 대시보드로 이동
+    login('구글사용자'); // 구글 로그인 시 기본 학번 설정
     const timer = setTimeout(() => {
       navigate('/');
     }, 2000);
 
     return () => clearTimeout(timer);
-  }, [navigate]);
+  }, [navigate, login]);
 
   return (
     <div style={{ 

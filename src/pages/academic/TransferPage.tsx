@@ -1,11 +1,15 @@
+import React, { useState } from 'react';
+import AcademicSidebar from '../../components/Sidebar/AcademicSidebar';
+import AcademicMain from '../../components/MainContent/AcademicMain';
+
 const TransferPage = () => {
+  const [selected, setSelected] = useState<'leave' | 'dropout' | 'transfer' | 'double' | 'inter'>('transfer');
+
   return (
-    <section className="main-content">
-      <div className="title">전과</div>
-      <div className="dashboard-box">
-        <p>전과 관련 대시보드를 여기에 임베드합니다.</p>
-      </div>
-    </section>
+    <div style={{ display: 'flex' }}>
+      <AcademicSidebar selected={selected} onSelect={setSelected} />
+      <AcademicMain selected={selected} onSelect={setSelected} />
+    </div>
   );
 };
 

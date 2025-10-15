@@ -1,9 +1,11 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { useAuth } from '../contexts/AuthContext';
 import api from '../utils/api';
 
 const LoginPage = () => {
   const navigate = useNavigate();
+  const { login } = useAuth();
   const [studentId, setStudentId] = useState('');
   const [password, setPassword] = useState('');
   const [isLoading, setIsLoading] = useState(false);
@@ -46,7 +48,8 @@ const LoginPage = () => {
       });
 
       if (response.data.status === 200) {
-        // 로그인 성공! 대시보드로 이동
+        // 로그인 성공! 인증 상태 업데이트 후 대시보드로 이동
+        login(studentId); // 학번을 전달
         navigate('/');
       } else {
         alert(response.data.message || '로그인에 실패했습니다.');

@@ -6,9 +6,9 @@ type Props = {
     onSelect: (key: 'major' | 'exam') => void;
   };
 
-const tableauLinks: Record<string, string> = {
-  major: 'https://prod-apnortheast-a.online.tableau.com/t/inu_dashboard/views/_17367196286860/1?:origin=card_share_link&:embed=y',
-  exam: 'https://prod-apnortheast-a.online.tableau.com/t/inu_dashboard/views/_17367196286860/2?:origin=card_share_link&:embed=y',
+const supersetLinks: Record<string, string> = {
+  major: 'http://10.80.86.78:8088/superset/dashboard/p/kQE0ebr2KZm/?standalone=1',
+  exam: 'http://10.80.86.78:8088/superset/dashboard/p/kQE0ebr2KZm/?standalone=1',
 };
 
 const AdmissionMain: React.FC<Props> = ({ selected, onSelect }) => (
@@ -36,15 +36,27 @@ const AdmissionMain: React.FC<Props> = ({ selected, onSelect }) => (
     {/* 선택된 제목 표시 영역 */}
     <div id="selected-title" className="selected-title"></div>
 
-    {/* 태블로 등 대시보드 영역 */}
+    {/* Superset 대시보드 영역 */}
     <div className="dashboard-box" id="dashboard-box">
-      <iframe
-        src={tableauLinks[selected]}
-        width="100%"
-        height="100%"
-        style={{ border: 0 }}
-        title="Tableau"
-      />
+      <div style={{
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        height: '400px',
+        fontSize: '16px',
+        color: '#666',
+        textAlign: 'center',
+        padding: '20px'
+      }}>
+        <div>
+          <h3>대시보드 임베딩 준비 중</h3>
+          <p>백엔드에서 게스트 토큰 API를 구현하면</p>
+          <p>Superset Embedded SDK로 대시보드가 표시됩니다.</p>
+          <p style={{ fontSize: '14px', color: '#999', marginTop: '10px' }}>
+            현재 선택: {selected === 'major' ? '학과별 신입생 수' : '전형별 신입생 수'}
+          </p>
+        </div>
+      </div>
     </div>
   </section>
 );

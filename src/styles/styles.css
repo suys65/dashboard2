@@ -70,17 +70,53 @@ header {
 }
 
 .sidebar {
-    position: fixed;
-    left: 110px;
-    top: 90px;
-    width: 260px;
-    height: calc(100vh - 110px);
-    background-color: #ffffff;
-    padding: 20px;
-    border: 1px solid #e0e0e0;
-    border-radius: 8px;
-    overflow-y: auto;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    position: fixed !important;
+    left: 110px !important;
+    top: 90px !important;
+    width: 260px !important;
+    height: calc(100vh - 110px) !important;
+    background-color: #ffffff !important;
+    padding: 20px !important;
+    border: 1px solid #e0e0e0 !important;
+    border-radius: 8px !important;
+    overflow-y: auto !important;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1) !important;
+    z-index: 999 !important;
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+}
+
+/* 모든 사이드바 강제 표시 */
+#admission-sidebar,
+#academic-sidebar,
+#grade-sidebar,
+#graduate-sidebar,
+#etc-sidebar {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    position: fixed !important;
+    left: 110px !important;
+    top: 90px !important;
+    width: 260px !important;
+    height: calc(100vh - 110px) !important;
+    background-color: #ffffff !important;
+    padding: 20px !important;
+    border: 1px solid #e0e0e0 !important;
+    border-radius: 8px !important;
+    overflow-y: auto !important;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1) !important;
+    z-index: 999 !important;
+}
+
+/* 사이드바가 숨겨지는 모든 경우를 방지 */
+.sidebar,
+aside.sidebar,
+aside[class*="sidebar"] {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
 }
 
 .sidebar h2 {
