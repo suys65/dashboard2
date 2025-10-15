@@ -3,128 +3,181 @@
     font-family: 'nanum';
     src: url('SCDream4.otf') format('opentype');
 }
-body {
-    font-family: "nanum", Arial;
+
+* {
     margin: 0;
-    padding-top: 60px;
-    background-color: #fff;
+    padding: 0;
+    box-sizing: border-box;
 }
 
+body {
+    font-family: "nanum", Arial, sans-serif;
+    margin: 0;
+    padding-top: 70px;
+    background-color: #fff;
+    color: #333;
+}
+
+/* 헤더 스타일 */
 header {
-    background-color: #d6e4f2; /* 배경색 유지 */
-    padding: 5px 30px;
-    display: flex;
-    align-items: center;
-
-    /* 상자 아래 그림자 추가 */
-    box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.1);
-
-    /* 스크롤 시 상단 고정 */
+    background-color: #f8f9fa;
+    border-bottom: 1px solid #e5e5e5;
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    z-index: 1000; /* 다른 요소 위에 표시되도록 */
+    z-index: 1000;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
 }
 
-.logo {
+.header-content {
     display: flex;
     align-items: center;
+    justify-content: space-between;
+    padding: 0 30px;
+    height: 70px;
+    max-width: 1400px;
+    margin: 0 auto;
 }
 
-.logo img {
-    height: 39px;
+.logo-section {
+    display: flex;
+    align-items: center;
+    margin-left: -90px;
+}
+
+.logo-img {
+    height: 40px;
+    width: auto;
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.signup-link {
+    text-decoration: none;
+    color: #333;
+    font-size: 14px;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.signup-link:hover {
+    color: #1976d2;
 }
 
 .sidebar {
     position: fixed;
-    left: 0;
-    top: 100px;
-    width: 14%;
-    max-width: 250px;
-    height: calc(100% - 200px);
+    left: 110px;
+    top: 90px;
+    width: 260px;
+    height: calc(100vh - 110px);
     background-color: #ffffff;
-    padding: 10px;
-    margin: 0px 3%;
-    border: 2px solid #cccccc;
-    border-radius: 10px;
-    overflow-y: auto; /* Enable scrolling when content exceeds height */
-    max-height: calc(100vh - 200px); /* Limit height to viewport height minus the top and bottom margin */
+    padding: 20px;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    overflow-y: auto;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
-.sidebar h2 {/*사이드바-메인메뉴*/
+.sidebar h2 {
     font-family: "nanum", Arial;
-    font-size: 130%;
-    margin-bottom: 9%;
-    padding-bottom: 10px;
-    border-bottom: 2px solid #e7e7e7;
-    margin-left: 3%;
-    margin-right: 3%;
-    color: #3f3f3f;
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    padding-bottom: 12px;
+    border-bottom: 2px solid #e0e0e0;
+    color: #333;
 }
 
 .sidebar ul {
     font-family: "nanum", Arial;
     list-style: none;
-    font-size: 110%;
+    font-size: 14px;
     padding: 0;
-    margin: 0px 3%;
+    margin: 0;
 }
 
 .sidebar-btn {
     font-family: "nanum", Arial;
     text-decoration: none;
-    color: #272727;
-    font-weight: bold;
+    color: #333;
+    font-weight: 600;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin: 15px 0;
-    color: #104c9b;
+    margin: 12px 0;
+    padding: 8px 0;
+    color: #1976d2;
+    transition: color 0.3s ease;
+}
+
+.sidebar-btn:hover {
+    color: #1565c0;
+}
+
+.sidebar-section {
+    margin-bottom: 20px;
+}
+
+.sidebar-section-title {
+    font-family: "nanum", Arial;
+    font-size: 16px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 10px;
+    padding: 8px 0;
+    border-bottom: 1px solid #e0e0e0;
 }
 
 /* 사이드바 하위 메뉴 */
 .sidebar-submenu {
     font-family: "nanum", Arial;
-    display: none;
+    display: block;
     list-style: none;
-    padding-left: 20px;
-    
+    padding-left: 0;
+    margin-top: 10px;
 }
 
 /* 기본 스타일 */
 .sidebar-submenu-btn {
     font-family: "nanum", Arial;
-    font-size: 70%;
+    font-size: 13px;
     text-decoration: none;
-    color: #3d3d3d;
+    color: #666;
     display: block;
-    padding: 8px 5px;
+    padding: 10px 15px;
     background-color: transparent;
     width: 100%;
-    border: none; /* 테두리 제거 */
-    transition: background-color 0.1s ease, color 0.1s ease;
+    border: none;
+    transition: all 0.3s ease;
     text-align: left;
-    border-bottom: 1px solid #ececec;
+    border-radius: 6px;
+    margin: 2px 0;
 }
 
 /* 활성화 상태 (active 버전) */
 .sidebar-submenu-btn-active {
     font-family: "nanum", Arial;
-    font-size: 70%;
+    font-size: 13px;
     color: #fff;
-    background-color: #104c9b;
-    border: none; /* 테두리 제거 */
-     /* 텍스트를 굵게 표시 (선택 사항) */
-    padding: 8px 5px; 
+    background-color: #1976d2;
+    border: none;
+    padding: 10px 15px; 
     width: 100%;
-    border-radius: 5px; /* 모서리를 둥글게 (선택 사항) */
-    transition: background-color 0.3s ease, color 0.3s ease;
+    border-radius: 6px;
+    transition: all 0.3s ease;
     text-align: left;
+    margin: 2px 0;
+    font-weight: 500;
 }
 
 .sidebar-submenu-btn:hover {
-    color: #104c9b;
+    color: #1976d2;
+    background-color: #f5f5f5;
 }
 
 /* 상단 네비게이션 하위 메뉴 */
@@ -163,181 +216,431 @@ header {
     cursor: pointer;
     font-size: 12px;
 }
-/* 메인 콘텐츠가 사이드바에 가려지지 않도록 여백 추가 */
+/* 메인 콘텐츠 영역 */
 .main-content {
-    margin-left: 3%; /* 사이드바가 나타날 공간 확보 */
-    padding-left: 16%;
+    margin-left: 380px; /* 사이드바 너비 + 여백 */
+    padding: 20px 30px;
     transition: margin-left 0.3s ease;
+    max-width: calc(100% - 380px);
 }
+
 .start-content {
-    margin-left: 5%; /* 사이드바가 나타날 공간 확보 */
-    padding-left: 0%;
+    margin-left: 380px; /* 사이드바 너비 + 여백 */
+    padding: 20px 30px;
     transition: margin-left 0.3s ease;
+    max-width: calc(100% - 380px);
 }
+
 .main-content.toggled {
-    margin-left: 0; /* 사이드바가 숨겨질 때 여백 제거 */
+    margin-left: 40px; /* 사이드바가 숨겨질 때 여백 */
 }
 
 
 
-.nav {
-    margin-left:10vw;
-    list-style: none;
+/* 메인 네비게이션 */
+.main-nav {
+    flex: 1;
     display: flex;
-    gap: 6vw;
-    padding: 0%;
+    justify-content: center;
+    margin: 0 30px;
 }
 
-.nav li {
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 0;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-item {
     position: relative;
 }
 
-.nav-btn {/*상단바 버튼*/
+.nav-link {
     text-decoration: none;
-    color: #222222;
-    padding: 10px;
-    font-size: 19px;
-    transition: color 0.3s ease;
+    color: #333;
+    padding: 15px 60px;
+    font-size: 16px;
+    font-weight: 500;
+    display: block;
+    transition: all 0.3s ease;
+    border-bottom: 3px solid transparent;
 }
 
-.nav-btn:hover {
-    color: #1859af;
+.nav-item.active .nav-link {
+    color: #1976d2;
+    border-bottom-color: #1976d2;
 }
 
-.submenu {
+.nav-link:hover {
+    color: #1976d2;
+    background-color: #f0f8ff;
+}
+
+/* 드롭다운 메뉴 */
+.nav-dropdown {
     display: none;
     position: absolute;
     top: 100%;
     left: 0;
     background-color: #fff;
-    border: 1px solid #1859af;
-    padding: 10px;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
     list-style: none;
-    width: 150px;
+    padding: 8px 0;
+    margin: 0;
+    min-width: 180px;
+    z-index: 1001;
 }
 
-.submenu li {
-    margin: 3px 0;
-}
-
-.submenu-btn {
-    text-decoration: none;
-    color: #222222;
+.nav-item:hover .nav-dropdown {
     display: block;
-    padding: 5px 10px;
 }
 
-.submenu-btn:hover {
+.nav-dropdown li {
+    margin: 0;
+}
+
+.nav-dropdown-link {
+    display: block;
+    padding: 10px 20px;
+    color: #333;
+    text-decoration: none;
+    font-size: 14px;
+    transition: all 0.3s ease;
+}
+
+.nav-dropdown-link:hover {
     background-color: #f0f8ff;
-    color: #115ebd;
+    color: #1976d2;
+}
+
+/* 로그인 버튼 */
+.login-btn {
+    text-decoration: none;
+    background-color: #1976d2;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 500;
+    transition: background-color 0.3s ease;
+}
+
+.login-btn:hover {
+    background-color: #1565c0;
 }
 
 .breadcrumb {
-    position: absolute; /* 부모 요소를 기준으로 위치 설정 */
-    top: 100px; /* 위에서 20px */
-    right:3vw;/*왼쪽에서 30px */
-    font-size: 90%;
-    color: #6d6e6c;
+    position: absolute;
+    top: 90px;
+    right: 30px;
+    font-size: 14px;
+    color: #666;
+    font-weight: 400;
 }
 
 
 .dashboard-title {
-    margin: 40px 30px;
+    margin: 20px 0;
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
 }
 
 .content-buttons {
-    margin-left: 30px;
-    margin-bottom: 20px;
+    margin: 20px 0;
     display: flex;
-    gap: 8px;
+    gap: 12px;
 }
 
 .inactive-btn {
     font-family: "nanum", Arial;
-    font-size: 87%;
-    background-color: #EDEDED;
+    font-size: 14px;
+    background-color: #f5f5f5;
+    color: #666;
     border: none;
-    padding: 4% 2%;
-    border-radius: 7px;
-    margin-right: 2%;
+    padding: 12px 24px;
+    border-radius: 8px;
     cursor: pointer;
-    width: 160px;   /* 원하는 가로 길이(px, %, rem 등) */
-    text-align: center; /* 텍스트 가운데 정렬 */
+    transition: all 0.3s ease;
+    font-weight: 500;
+}
+
+.inactive-btn:hover {
+    background-color: #e0e0e0;
+    color: #333;
 }
 
 .active-btn {
     font-family: "nanum", Arial;
-    font-size: 87%;
-    background-color: #0A4DA0;
+    font-size: 14px;
+    background-color: #1976d2;
     color: white;
     border: none;
-    padding: 1% 2%;
-    border-radius: 7px;
-    margin-right: 2%;
+    padding: 12px 24px;
+    border-radius: 8px;
     cursor: pointer;
     position: relative;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.active-btn:hover {
+    background-color: #1565c0;
 }
 
 .active-btn::after {
     content: '';
     position: absolute;
-    bottom: -24px; /* 버튼 아래에 위치 */
-    left: 50%; /* 꼬리 위치 조정 */
+    bottom: -8px;
+    left: 50%;
     transform: translateX(-50%);
-    border-width: 15px;
-    border-style: solid;
-    border-color: #0A4DA0 transparent transparent transparent; /* 말풍선 색과 동일하게 */
+    width: 0;
+    height: 0;
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-top: 8px solid #1976d2;
 }
 
 .selected-title {
-    margin-left: 30px;
-    margin-top: 40px;
-    font-size: 17px;
+    margin: 30px 0 20px 0;
+    font-size: 18px;
     font-weight: bold;
     color: #333;
 }
+
 .title {
-    margin-top: 38px;
-    margin-left: 30px;
-    margin-bottom: 10px;
-    font-size: 19px;
+    margin: 30px 0 15px 0;
+    font-size: 20px;
     font-weight: bold;
-    color: #0A4DA0;
+    color: #1976d2;
 }
+
 .last-updated-title {
-    margin-left: 30px;
+    margin: 0 0 20px 0;
     font-size: 14px;
     color: #666;
 }
 
 .dashboard-box {
-    margin-left: 30px;
     font-family: "nanum", Arial;
-    margin-bottom: 30px;
-    width:344%;
-    height: 40vw;
+    margin: 20px 0;
+    width: 100%;
+    height: 500px;
     background-color: white;
-    border: 2px solid #f3f3f3;
-    
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
 .dashboard-start {
-    margin-left: 30px;
-
     font-family: "nanum", Arial;
-    margin-bottom: 30px;
-    width: 90%;
-    height: 48vw;
+    margin: 20px 0;
+    width: 100%;
+    height: 700px;
     background-color: white;
-    border: 2px solid #f3f3f3;
-    
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
 .dashboard-box p {
-    font-size: 20px;
+    font-size: 18px;
     font-family: "nanum", Arial;
-    color: grey;
+    color: #999;
     text-align: center;
     line-height: 400px;
+    margin: 0;
 }
 
+
+/* 로그인 페이지 */
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: calc(100vh - 120px);
+}
+
+.login-card {
+    display: flex;
+    width: 780px;
+    background-color: #fff;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+}
+
+.login-left {
+    background-color: #e9edf5;
+    width: 38%;
+}
+
+.login-right {
+    width: 62%;
+    padding: 28px 36px;
+}
+
+.login-title {
+    margin: 0 0 16px 0;
+    font-size: 18px;
+    color: #333;
+}
+
+.form-row { margin-bottom: 12px; }
+
+.input {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 10px 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.primary-btn {
+    width: 100%;
+    background-color: #0A4DA0;
+    color: #fff;
+    border: none;
+    padding: 10px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    margin-top: 8px;
+}
+
+.primary-btn:hover { background-color: #1859af; }
+
+.login-links {
+    margin-top: 14px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.link-btn {
+    background: none;
+    border: none;
+    color: #6b7280;
+    cursor: pointer;
+    padding: 0;
+}
+
+.divider {
+    display: inline-block;
+    width: 1px;
+    height: 12px;
+    background-color: #e5e7eb;
+}
+
+/* 반응형 디자인 */
+@media (max-width: 1200px) {
+    .header-content {
+        padding: 0 20px;
+    }
+    
+    .main-nav {
+        margin: 0 20px;
+    }
+    
+    .sidebar {
+        width: 240px;
+        left: 40px;
+    }
+    
+    .main-content,
+    .start-content {
+        margin-left: 340px;
+        padding: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .header-content {
+        flex-direction: column;
+        height: auto;
+        padding: 15px 20px;
+    }
+    
+    .logo-section {
+        margin-bottom: 15px;
+    }
+    
+    .main-nav {
+        margin: 0;
+        order: 2;
+    }
+    
+    .nav-menu {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+    }
+    
+    .nav-link {
+        padding: 8px 15px;
+        font-size: 14px;
+    }
+    
+    .header-right {
+        order: 3;
+        margin-top: 10px;
+        gap: 10px;
+    }
+    
+    .sidebar {
+        position: relative;
+        width: 100%;
+        height: auto;
+        margin: 20px;
+        top: auto;
+        left: 0;
+    }
+    
+    .main-content,
+    .start-content {
+        margin-left: 0;
+        padding: 20px;
+        max-width: 100%;
+    }
+    
+    .content-buttons {
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+    
+    .inactive-btn,
+    .active-btn {
+        padding: 10px 16px;
+        font-size: 13px;
+    }
+}
+
+@media (max-width: 480px) {
+    .logo-text {
+        display: none;
+    }
+    
+    .nav-menu {
+        gap: 5px;
+    }
+    
+    .nav-link {
+        padding: 6px 10px;
+        font-size: 13px;
+    }
+    
+    .dashboard-box,
+    .dashboard-start {
+        height: 300px;
+    }
+    
+    .dashboard-box p {
+        line-height: 250px;
+        font-size: 16px;
+    }
+}
