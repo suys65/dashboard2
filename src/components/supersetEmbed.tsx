@@ -21,7 +21,7 @@ const SupersetEmbed = () => {
   }
 
   const overrideSrc = (import.meta as any).env?.VITE_SUPERSET_IFRAME_SRC || '';
-  const defaultSrc = 'http://localhost:8088/superset/dashboard/p/kDoOpQZPdzQ/';
+  const defaultSrc = 'https://occasional-dramatic-davis-rob.trycloudflare.com/superset/dashboard/p/kDoOpQZPdzQ/';
   const iframeSrc = overrideSrc || defaultSrc;
 
   const isHttpsPage = typeof window !== 'undefined' && window.location.protocol === 'https:';
