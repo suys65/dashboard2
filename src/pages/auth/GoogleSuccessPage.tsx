@@ -32,7 +32,7 @@ const GoogleSuccessPage = () => {
         borderRadius: '8px',
         backgroundColor: '#f9f9f9'
       }}>
-        <h2 style={{ color: '#4CAF50', marginBottom: '20px' }}>✅ 로그인 성공!</h2>
+        <h2 style={{ color: '#4CAF50', marginBottom: '20px' }}>로그인 성공!</h2>
         <p style={{ marginBottom: '10px' }}>구글 로그인이 완료되었습니다.</p>
         <p style={{ fontSize: '14px', color: '#666' }}>잠시 후 대시보드로 이동합니다...</p>
         <div style={{ 

@@ -36,7 +36,7 @@ const GoogleFailPage = () => {
         maxWidth: '500px',
         width: '90%'
       }}>
-        <h2 style={{ color: '#f44336', marginBottom: '20px' }}>❌ 로그인 실패</h2>
+        <h2 style={{ color: '#f44336', marginBottom: '20px' }}> 로그인 실패</h2>
         <p style={{ marginBottom: '20px' }}>구글 로그인에 실패했습니다.</p>
         
         {error && (

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import GradeSidebar from '../components/Sidebar/GradeSidebar';
 import GradeMain from '../components/MainContent/GradeMain';
 

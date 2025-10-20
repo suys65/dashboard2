@@ -97,7 +97,7 @@ const LoginPage = () => {
                 e.currentTarget.style.backgroundColor = '#4285f4';
               }}
             >
-              <span>🔍</span>
+              <span></span>
               구글로 로그인 (학과 이메일)
             </button>
           </div>

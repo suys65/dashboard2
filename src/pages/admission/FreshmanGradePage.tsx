@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import AdmissionSidebar from '../../components/Sidebar/AdmissionSidebar';
 import AdmissionMain from '../../components/MainContent/AdmissionMain';
 

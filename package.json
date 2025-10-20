@@ -10,7 +10,6 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@superset-ui/embedded-sdk": "^0.2.0",
     "axios": "^1.12.2",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",

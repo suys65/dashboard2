@@ -5,12 +5,8 @@ type Props = {
   onSelect: (key: 'satisfaction' | 'staff') => void;
 };
 
-const supersetLinks: Record<string, string> = {
-  satisfaction: 'http://10.80.86.78:8088/superset/dashboard/p/kQE0ebr2KZm/?standalone=1',
-  staff: 'http://10.80.86.78:8088/superset/dashboard/p/kQE0ebr2KZm/?standalone=1',
-};
 
-const EtcMain: React.FC<Props> = ({ selected }) => (
+const EtcMain: React.FC<Props> = () => (
   <section className="main-content">
     <div className="breadcrumb" id="breadcrumb">
       Home &gt; 기타
@@ -31,7 +27,7 @@ const EtcMain: React.FC<Props> = ({ selected }) => (
         <div>
           <h3>대시보드 임베딩 준비 중</h3>
           <p>백엔드에서 게스트 토큰 API를 구현하면</p>
-          <p>Superset Embedded SDK로 대시보드가 표시됩니다.</p>
+          <p>iframe으로 대시보드가 표시됩니다.</p>
         </div>
       </div>
     </div>

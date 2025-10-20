@@ -6,10 +6,6 @@ type Props = {
     onSelect: (key: 'major' | 'exam') => void;
   };
 
-const supersetLinks: Record<string, string> = {
-  major: 'http://10.80.86.78:8088/superset/dashboard/p/kQE0ebr2KZm/?standalone=1',
-  exam: 'http://10.80.86.78:8088/superset/dashboard/p/kQE0ebr2KZm/?standalone=1',
-};
 
 const AdmissionMain: React.FC<Props> = ({ selected, onSelect }) => (
   <section className="main-content">
@@ -51,7 +47,7 @@ const AdmissionMain: React.FC<Props> = ({ selected, onSelect }) => (
         <div>
           <h3>대시보드 임베딩 준비 중</h3>
           <p>백엔드에서 게스트 토큰 API를 구현하면</p>
-          <p>Superset Embedded SDK로 대시보드가 표시됩니다.</p>
+          <p>iframe으로 대시보드가 표시됩니다.</p>
           <p style={{ fontSize: '14px', color: '#999', marginTop: '10px' }}>
             현재 선택: {selected === 'major' ? '학과별 신입생 수' : '전형별 신입생 수'}
           </p>

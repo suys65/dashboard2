@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import AcademicSidebar from '../../components/Sidebar/AcademicSidebar';
 import AcademicMain from '../../components/MainContent/AcademicMain';
 

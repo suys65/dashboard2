@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import EtcSidebar from '../../components/Sidebar/EtcSidebar';
 import EtcMain from '../../components/MainContent/EtcMain';
 
