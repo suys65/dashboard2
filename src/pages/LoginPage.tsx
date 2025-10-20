@@ -10,25 +10,7 @@ const LoginPage = () => {
   const [password, setPassword] = useState('');
   const [isLoading, setIsLoading] = useState(false);
 
-  // 구글 로그인 처리
-  const handleGoogleLogin = () => {
-    const googleAuthUrl = 'https://inunity-server.squidjiny.com/oauth2/authorization/google';
-    const popup = window.open(
-      googleAuthUrl,
-      '_blank',
-      'width=500,height=600,scrollbars=yes,resizable=yes'
-    );
-
-    // 팝업이 닫혔는지 확인하는 로직 (선택사항)
-    if (popup) {
-      const checkClosed = setInterval(() => {
-        if (popup.closed) {
-          clearInterval(checkClosed);
-          // 팝업이 닫혔을 때의 처리 (필요시)
-        }
-      }, 1000);
-    }
-  };
+  // 구글 로그인 제거됨
 
   // 학교 포탈 로그인 처리
   const handlePortalLogin = async (e: React.FormEvent) => {
@@ -70,60 +52,22 @@ const LoginPage = () => {
         <div className="login-right">
           <h2 className="login-title">로그인</h2>
           
-          {/* 구글 로그인 버튼 */}
-          <div style={{ marginBottom: '30px' }}>
-            <button 
-              type="button" 
-              onClick={handleGoogleLogin}
-              style={{
-                width: '100%',
-                padding: '12px',
-                backgroundColor: '#4285f4',
-                color: 'white',
-                border: 'none',
-                borderRadius: '4px',
-                fontSize: '16px',
-                fontWeight: 'bold',
-                cursor: 'pointer',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                gap: '8px'
-              }}
-              onMouseOver={(e) => {
-                e.currentTarget.style.backgroundColor = '#3367d6';
-              }}
-              onMouseOut={(e) => {
-                e.currentTarget.style.backgroundColor = '#4285f4';
-              }}
-            >
-              <span></span>
-              구글로 로그인 (학과 이메일)
-            </button>
-          </div>
-
-          {/* 구분선 */}
-          <div style={{ 
-            display: 'flex', 
-            alignItems: 'center', 
-            marginBottom: '30px',
-            color: '#666'
-          }}>
-            <div style={{ flex: 1, height: '1px', backgroundColor: '#e0e0e0' }} />
-            <span style={{ padding: '0 15px', fontSize: '14px' }}>또는</span>
-            <div style={{ flex: 1, height: '1px', backgroundColor: '#e0e0e0' }} />
-          </div>
+          {/* 단일 로그인 폼 */}
 
           {/* 학교 포탈 로그인 폼 */}
           <form onSubmit={handlePortalLogin}>
             <div className="form-row">
-              <label htmlFor="studentId" className="sr-only">학번</label>
+              <label htmlFor="studentId" className="sr-only">학번/사번</label>
               <input
                 id="studentId"
                 type="text"
-                placeholder="학번을 입력해주세요."
+                inputMode="numeric"
+                placeholder="학번/사번을 입력해주세요. (숫자만)"
                 value={studentId}
-                onChange={(e) => setStudentId(e.target.value)}
+                onChange={(e) => {
+                  const onlyDigits = e.target.value.replace(/\D/g, '');
+                  setStudentId(onlyDigits);
+                }}
                 className="input"
                 disabled={isLoading}
               />
@@ -133,9 +77,17 @@ const LoginPage = () => {
               <input
                 id="password"
                 type="password"
-                placeholder="비밀번호를 입력해주세요."
+                inputMode="text"
+                placeholder="비밀번호를 입력해주세요. (한글 제외)"
                 value={password}
-                onChange={(e) => setPassword(e.target.value)}
+                onChange={(e) => {
+                  // 한글 자모 및 완성형만 제거, 나머지(영문/숫자/특수문자)는 허용
+                  const withoutKorean = e.target.value.replace(/[\u1100-\u11FF\u3130-\u318F\uAC00-\uD7AF]/g, '');
+                  setPassword(withoutKorean);
+                }}
+                autoCapitalize="off"
+                autoCorrect="off"
+                spellCheck={false}
                 className="input"
                 disabled={isLoading}
               />
@@ -149,15 +101,10 @@ const LoginPage = () => {
                 cursor: isLoading ? 'not-allowed' : 'pointer'
               }}
             >
-              {isLoading ? '로그인 중...' : '학교 포탈 로그인'}
+              {isLoading ? '로그인 중...' : '로그인'}
             </button>
           </form>
-          
-          <div className="login-links">
-            <button className="link-btn" type="button">아이디 찾기</button>
-            <span className="divider" />
-            <button className="link-btn" type="button">비밀번호 찾기</button>
-          </div>
+
         </div>
       </div>
     </section>

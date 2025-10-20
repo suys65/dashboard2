@@ -23,7 +23,7 @@ const SupersetEmbed = () => {
   return (
     <div className="dashboard-start">
       <iframe
-        src="http://10.80.86.78:8088/superset/dashboard/p/kQE0ebr2KZm/?standalone=1"
+        src="http://10.80.86.78:8088/superset/dashboard/8a738685-a518-4ae5-9d89-994473c01de2/?standalone=1"
         width="100%"
         height="100%"
         frameBorder={0}

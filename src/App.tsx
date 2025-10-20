@@ -29,8 +29,7 @@ import GradSchoolPage from './pages/graduate/GradSchoolPage';
 import EduSatisfactionPage from './pages/etc/EduSatisfactionPage';
 import StaffStatusPage from './pages/etc/StaffStatusPage';
 import LoginPage from './pages/LoginPage';
-import GoogleSuccessPage from './pages/auth/GoogleSuccessPage';
-import GoogleFailPage from './pages/auth/GoogleFailPage';
+// 구글 로그인 관련 라우트 제거됨
 
 function App() {
   return (
@@ -39,8 +38,7 @@ function App() {
         <Routes>
           {/* 로그인 페이지는 보호되지 않음 */}
           <Route path="/login" element={<LoginPage />} />
-          <Route path="/auth/google/success" element={<GoogleSuccessPage />} />
-          <Route path="/auth/google/fail" element={<GoogleFailPage />} />
+          {/* 구글 로그인 관련 라우트 제거됨 */}
           
           {/* 모든 다른 페이지는 보호됨 */}
           <Route path="/" element={
