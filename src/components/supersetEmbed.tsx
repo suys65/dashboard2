@@ -21,10 +21,7 @@ const SupersetEmbed = () => {
   }
 
   const overrideSrc = (import.meta as any).env?.VITE_SUPERSET_IFRAME_SRC || '';
-  const supersetBase = (import.meta as any).env?.VITE_SUPERSET_URL || 'http://10.80.86.78:8088';
-  const dashboardId = (import.meta as any).env?.VITE_SUPERSET_DASHBOARD_ID || '20';
-  const nativeFiltersKey = (import.meta as any).env?.VITE_SUPERSET_NATIVE_FILTERS_KEY || 'e7y6y2j8k3c';
-  const defaultSrc = `${supersetBase}/superset/dashboard/${dashboardId}/?native_filters_key=${nativeFiltersKey}`;
+  const defaultSrc = 'http://localhost:8088/superset/dashboard/p/kDoOpQZPdzQ/';
   const iframeSrc = overrideSrc || defaultSrc;
 
   const isHttpsPage = typeof window !== 'undefined' && window.location.protocol === 'https:';
