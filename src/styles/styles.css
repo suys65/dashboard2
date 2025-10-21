@@ -261,10 +261,10 @@ aside[class*="sidebar"] {
 }
 
 .start-content {
-    margin-left: 380px; /* 사이드바 너비 + 여백 */
+    margin-left: 110px; /* 메인 화면은 사이드바가 없으므로 왼쪽 여백만 */
     padding: 20px 30px;
     transition: margin-left 0.3s ease;
-    max-width: calc(100% - 380px);
+    max-width: calc(100% - 140px);
 }
 
 .main-content.toggled {
@@ -588,9 +588,13 @@ aside[class*="sidebar"] {
         left: 40px;
     }
     
-    .main-content,
-    .start-content {
+    .main-content {
         margin-left: 340px;
+        padding: 20px;
+    }
+    
+    .start-content {
+        margin-left: 80px;
         padding: 20px;
     }
 }
