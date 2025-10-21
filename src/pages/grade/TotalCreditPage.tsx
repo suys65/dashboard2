@@ -2,17 +2,20 @@ import { useState } from 'react';
 import GradeSidebar from '../../components/Sidebar/GradeSidebar';
 import GradeMain from '../../components/MainContent/GradeMain';
 
+type SelectedType = 
+  | 'totalMajor' | 'totalYear'
+  | 'majorMajor' | 'majorYear'
+  | 'generalMajor' | 'generalYear';
+
 const TotalCreditPage = () => {
-  const [selected, setSelected] = useState<'total' | 'major' | 'general'>('total');
+  const [selected, setSelected] = useState<SelectedType>('totalMajor');
 
   return (
-    <div style={{ display: 'flex' }}>
-      <GradeSidebar selected={selected} onSelect={setSelected} />
-      <GradeMain selected={selected} onSelect={setSelected} />
-    </div>
+    <>
+      <GradeSidebar submenu="total" selected={selected} onSelect={setSelected} />
+      <GradeMain submenu="total" selected={selected} onSelect={setSelected} />
+    </>
   );
 };
 
 export default TotalCreditPage;
-
-

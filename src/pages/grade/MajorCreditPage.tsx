@@ -2,17 +2,20 @@ import { useState } from 'react';
 import GradeSidebar from '../../components/Sidebar/GradeSidebar';
 import GradeMain from '../../components/MainContent/GradeMain';
 
+type SelectedType = 
+  | 'totalMajor' | 'totalYear'
+  | 'majorMajor' | 'majorYear'
+  | 'generalMajor' | 'generalYear';
+
 const MajorCreditPage = () => {
-  const [selected, setSelected] = useState<'total' | 'major' | 'general'>('major');
+  const [selected, setSelected] = useState<SelectedType>('majorMajor');
 
   return (
-    <div style={{ display: 'flex' }}>
-      <GradeSidebar selected={selected} onSelect={setSelected} />
-      <GradeMain selected={selected} onSelect={setSelected} />
-    </div>
+    <>
+      <GradeSidebar submenu="major" selected={selected} onSelect={setSelected} />
+      <GradeMain submenu="major" selected={selected} onSelect={setSelected} />
+    </>
   );
 };
 
 export default MajorCreditPage;
-
-

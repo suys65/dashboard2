@@ -3,13 +3,13 @@ import AdmissionSidebar from '../../components/Sidebar/AdmissionSidebar';
 import AdmissionMain from '../../components/MainContent/AdmissionMain';
 
 const FreshmanGradePage = () => {
-  const [selected, setSelected] = useState<'major' | 'exam'>('exam'); // 신입생 성적은 exam 선택
+  const [selected, setSelected] = useState<'recruitMajor' | 'recruitExam' | 'gradeMajor' | 'gradeExam'>('gradeMajor');
 
   return (
-    <div style={{ display: 'flex' }}>
-      <AdmissionSidebar selected={selected} onSelect={setSelected} />
-      <AdmissionMain selected={selected} onSelect={setSelected} />
-    </div>
+    <>
+      <AdmissionSidebar submenu="grade" selected={selected} onSelect={setSelected} />
+      <AdmissionMain submenu="grade" selected={selected} onSelect={setSelected} />
+    </>
   );
 };
 

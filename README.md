@@ -1,4 +1,55 @@
-# React + TypeScript + Vite
+# INU Dashboard Frontend
+
+인천대학교 대시보드 프론트엔드 애플리케이션 (React + TypeScript + Vite)
+
+## 🚀 시작하기
+
+### 설치
+```bash
+npm install
+```
+
+### 개발 서버 실행
+```bash
+npm run dev
+```
+
+### 빌드
+```bash
+npm run build
+```
+
+## 🔧 Superset 대시보드 URL 설정
+
+### 방법 1: Config 파일 수정 (권장)
+`src/config/superset.ts` 파일에서 베이스 URL을 변경하세요:
+
+```typescript
+export const SUPERSET_BASE_URL = 'https://새로운-도메인.com';
+```
+
+### 방법 2: 환경 변수 사용
+`.env` 파일을 생성하고 다음 내용을 추가하세요:
+
+```env
+VITE_SUPERSET_BASE_URL=https://새로운-도메인.com
+```
+
+### 대시보드 경로 추가
+`src/config/superset.ts`의 `DASHBOARD_PATHS` 객체에 새로운 대시보드 경로를 추가하세요:
+
+```typescript
+export const DASHBOARD_PATHS = {
+  MAIN: '/superset/dashboard/p/...',
+  ADMISSION_RECRUIT_MAJOR: '/superset/dashboard/p/...',
+  // 새로운 경로 추가
+  YOUR_NEW_DASHBOARD: '/superset/dashboard/p/...',
+};
+```
+
+---
+
+## React + TypeScript + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 

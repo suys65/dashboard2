@@ -254,10 +254,11 @@ aside[class*="sidebar"] {
 }
 /* 메인 콘텐츠 영역 */
 .main-content {
-    margin-left: 380px; /* 사이드바 너비 + 여백 */
-    padding: 20px 30px;
+    margin-left: 385px; /* 사이드바 너비 + 최소 여백 */
+    margin-right: 15px; /* 오른쪽 여백 최소화 */
+    padding: 20px 5px; /* 좌우 패딩 최소화 */
     transition: margin-left 0.3s ease;
-    max-width: calc(100% - 380px);
+    max-width: none; /* 최대 너비 제한 제거 */
 }
 
 .start-content {
@@ -387,7 +388,7 @@ aside[class*="sidebar"] {
 }
 
 .content-buttons {
-    margin: 20px 0;
+    margin: 10px 0;
     display: flex;
     gap: 12px;
 }
@@ -449,7 +450,7 @@ aside[class*="sidebar"] {
 }
 
 .title {
-    margin: 30px 0 15px 0;
+    margin: 5px 0 10px 0;
     font-size: 20px;
     font-weight: bold;
     color: #1976d2;
@@ -463,24 +464,32 @@ aside[class*="sidebar"] {
 
 .dashboard-box {
     font-family: "nanum", Arial;
-    margin: 20px 0;
+    margin: 10px 0;
     width: 100%;
-    height: 500px;
+    max-width: none;
+    height: 700px; /* 700px → 600px */
     background-color: white;
     border: 1px solid #e0e0e0;
     border-radius: 8px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    padding: 0;
+    box-sizing: border-box;
+    overflow: hidden; /* iframe이 박스 밖으로 안 나가도록 */
 }
 
 .dashboard-start {
     font-family: "nanum", Arial;
     margin: 20px 0;
     width: 100%;
-    height: 700px;
+    max-width: none;
+    height: 700px; /* 700px → 600px */
     background-color: white;
     border: 1px solid #e0e0e0;
     border-radius: 8px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    padding: 0;
+    box-sizing: border-box;
+    overflow: hidden; /* iframe이 박스 밖으로 안 나가도록 */
 }
 
 .dashboard-box p {
@@ -589,8 +598,10 @@ aside[class*="sidebar"] {
     }
     
     .main-content {
-        margin-left: 340px;
-        padding: 20px;
+        margin-left: 290px;
+        margin-right: 10px;
+        padding: 20px 5px;
+        max-width: none;
     }
     
     .start-content {

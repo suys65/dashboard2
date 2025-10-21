@@ -1,60 +1,108 @@
 // src/components/MainContent/AdmissionMain.tsx
 import React from 'react';
+import { getDashboardUrl, DASHBOARD_PATHS } from '../../config/superset';
 
 type Props = {
-    selected: 'major' | 'exam';
-    onSelect: (key: 'major' | 'exam') => void;
+  submenu: 'recruit' | 'grade';
+  selected: 'recruitMajor' | 'recruitExam' | 'gradeMajor' | 'gradeExam';
+  onSelect: (key: 'recruitMajor' | 'recruitExam' | 'gradeMajor' | 'gradeExam') => void;
+};
+
+const AdmissionMain: React.FC<Props> = ({ submenu, selected, onSelect }) => {
+  // 하위메뉴 정보
+  const submenuInfo = {
+    recruit: { title: '신입생 충원', breadcrumb: 'Home > 입학 > 신입생 충원' },
+    grade: { title: '신입생 성적', breadcrumb: 'Home > 입학 > 신입생 성적' }
   };
 
+  // 대시보드 URL 매핑
+  const dashboardMap = {
+    recruitMajor: { url: DASHBOARD_PATHS.ADMISSION_RECRUIT_MAJOR, title: '학과별 신입생 수' },
+    recruitExam: { url: DASHBOARD_PATHS.ADMISSION_RECRUIT_EXAM, title: '전형별 신입생 수' },
+    gradeMajor: { url: DASHBOARD_PATHS.ADMISSION_GRADE_MAJOR, title: '학과별 신입생 성적' },
+    gradeExam: { url: DASHBOARD_PATHS.ADMISSION_GRADE_EXAM, title: '전형별 신입생 성적' }
+  };
 
-const AdmissionMain: React.FC<Props> = ({ selected, onSelect }) => (
-  <section className="main-content">
-    <div className="breadcrumb" id="breadcrumb">
-      Home &gt; 입학 &gt; 신입생 충원
-    </div>
-    <div id="title" className="title">신입생 충원</div>
+  const currentDashboard = dashboardMap[selected];
 
-    <div className="content-buttons" id="content-buttons">
-      <button
-        className={selected === 'major' ? 'active-btn' : 'inactive-btn'}
-        onClick={() => onSelect('major')}
-      >
-        학과별 신입생 수
-      </button>
-      <button
-        className={selected === 'exam' ? 'active-btn' : 'inactive-btn'}
-        onClick={() => onSelect('exam')}
-      >
-        전형별 신입생 수
-      </button>
-    </div>
-
-    {/* 선택된 제목 표시 영역 */}
-    <div id="selected-title" className="selected-title"></div>
-
-    {/* Superset 대시보드 영역 */}
-    <div className="dashboard-box" id="dashboard-box">
-      <div style={{
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        height: '400px',
-        fontSize: '16px',
-        color: '#666',
-        textAlign: 'center',
-        padding: '20px'
-      }}>
-        <div>
-          <h3>대시보드 임베딩 준비 중</h3>
-          <p>백엔드에서 게스트 토큰 API를 구현하면</p>
-          <p>iframe으로 대시보드가 표시됩니다.</p>
-          <p style={{ fontSize: '14px', color: '#999', marginTop: '10px' }}>
-            현재 선택: {selected === 'major' ? '학과별 신입생 수' : '전형별 신입생 수'}
-          </p>
-        </div>
+  return (
+    <section className="main-content">
+      <div className="breadcrumb" id="breadcrumb">
+        {submenuInfo[submenu].breadcrumb}
       </div>
-    </div>
-  </section>
-);
+      <div id="title" className="title">{submenuInfo[submenu].title}</div>
+
+      <div className="content-buttons" id="content-buttons">
+        {submenu === 'recruit' ? (
+          <>
+            <button
+              className={selected === 'recruitMajor' ? 'active-btn' : 'inactive-btn'}
+              onClick={() => onSelect('recruitMajor')}
+            >
+              학과별 신입생 수
+            </button>
+            <button
+              className={selected === 'recruitExam' ? 'active-btn' : 'inactive-btn'}
+              onClick={() => onSelect('recruitExam')}
+            >
+              전형별 신입생 수
+            </button>
+          </>
+        ) : (
+          <>
+            <button
+              className={selected === 'gradeMajor' ? 'active-btn' : 'inactive-btn'}
+              onClick={() => onSelect('gradeMajor')}
+            >
+              학과별 신입생 성적
+            </button>
+            <button
+              className={selected === 'gradeExam' ? 'active-btn' : 'inactive-btn'}
+              onClick={() => onSelect('gradeExam')}
+            >
+              전형별 신입생 성적
+            </button>
+          </>
+        )}
+      </div>
+
+      {/* Superset 대시보드 영역 */}
+      <div className="dashboard-box" id="dashboard-box">
+        {currentDashboard.url ? (
+          <iframe
+            src={getDashboardUrl(currentDashboard.url)}
+            width="100%"
+            height="100%"
+            frameBorder={0}
+            title={currentDashboard.title}
+            referrerPolicy="no-referrer"
+            loading="lazy"
+            style={{
+              minHeight: '600px',
+              border: 'none',
+              display: 'block'
+            }}
+          />
+        ) : (
+          <div style={{
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
+            height: '600px',
+            fontSize: '16px',
+            color: '#666',
+            textAlign: 'center',
+            padding: '20px'
+          }}>
+            <div>
+              <h3>{currentDashboard.title} 대시보드 준비 중</h3>
+              <p>대시보드 URL이 준비되면 여기에 표시됩니다.</p>
+            </div>
+          </div>
+        )}
+      </div>
+    </section>
+  );
+};
 
 export default AdmissionMain;

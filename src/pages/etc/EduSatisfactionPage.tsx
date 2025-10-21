@@ -2,17 +2,17 @@ import { useState } from 'react';
 import EtcSidebar from '../../components/Sidebar/EtcSidebar';
 import EtcMain from '../../components/MainContent/EtcMain';
 
+type SelectedType = 'satisfactionMajor' | 'staffMajor';
+
 const EduSatisfactionPage = () => {
-  const [selected, setSelected] = useState<'satisfaction' | 'staff'>('satisfaction');
+  const [selected, setSelected] = useState<SelectedType>('satisfactionMajor');
 
   return (
-    <div style={{ display: 'flex' }}>
-      <EtcSidebar selected={selected} onSelect={setSelected} />
-      <EtcMain selected={selected} onSelect={setSelected} />
-    </div>
+    <>
+      <EtcSidebar submenu="satisfaction" selected={selected} onSelect={setSelected} />
+      <EtcMain submenu="satisfaction" selected={selected} onSelect={setSelected} />
+    </>
   );
 };
 
 export default EduSatisfactionPage;
-
-

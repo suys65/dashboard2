@@ -2,17 +2,22 @@ import { useState } from 'react';
 import AcademicSidebar from '../../components/Sidebar/AcademicSidebar';
 import AcademicMain from '../../components/MainContent/AcademicMain';
 
+type SelectedType = 
+  | 'leaveMajor' | 'leaveGrade'
+  | 'dropoutMajor' | 'dropoutGrade'
+  | 'transferInMajor' | 'transferOutMajor' | 'transferInGrade' | 'transferOutGrade'
+  | 'doubleApplyMajor' | 'doubleBelongMajor' | 'doubleApplyGrade' | 'doubleBelongGrade'
+  | 'interMajor' | 'interBelongMajor' | 'interMajorGrade' | 'interBelongGrade';
+
 const InterdisciplinaryPage = () => {
-  const [selected, setSelected] = useState<'leave' | 'dropout' | 'transfer' | 'double' | 'inter'>('inter');
+  const [selected, setSelected] = useState<SelectedType>('interMajor');
 
   return (
-    <div style={{ display: 'flex' }}>
-      <AcademicSidebar selected={selected} onSelect={setSelected} />
-      <AcademicMain selected={selected} onSelect={setSelected} />
-    </div>
+    <>
+      <AcademicSidebar submenu="inter" selected={selected} onSelect={setSelected} />
+      <AcademicMain submenu="inter" selected={selected} onSelect={setSelected} />
+    </>
   );
 };
 
 export default InterdisciplinaryPage;
-
-

@@ -1,5 +1,6 @@
 // src/components/SupersetEmbed.tsx
 import { useAuth } from '../contexts/AuthContext';
+import { getDashboardUrl, DASHBOARD_PATHS } from '../config/superset';
 
 const SupersetEmbed = () => {
   const { isAuthenticated } = useAuth();
@@ -20,9 +21,7 @@ const SupersetEmbed = () => {
     );
   }
 
-  const overrideSrc = (import.meta as any).env?.VITE_SUPERSET_IFRAME_SRC || '';
-  const defaultSrc = 'https://configure-nebraska-handed-rent.trycloudflare.com/superset/dashboard/p/dbDZ2Qe29yQ/?standalone=true&hide_title=1';
-  const iframeSrc = overrideSrc || defaultSrc;
+  const iframeSrc = getDashboardUrl(DASHBOARD_PATHS.MAIN);
 
   const isHttpsPage = typeof window !== 'undefined' && window.location.protocol === 'https:';
   const isHttpTarget = iframeSrc.startsWith('http://');
@@ -83,7 +82,9 @@ const SupersetEmbed = () => {
         referrerPolicy="no-referrer"
         loading="lazy"
         style={{
-          minHeight: '400px'
+          minHeight: '600px',
+          border: 'none',
+          display: 'block'
         }}
       />
     </div>

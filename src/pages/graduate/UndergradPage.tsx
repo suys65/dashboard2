@@ -2,17 +2,17 @@ import { useState } from 'react';
 import GraduateSidebar from '../../components/Sidebar/GraduateSidebar';
 import GraduateMain from '../../components/MainContent/GraduateMain';
 
+type SelectedType = 'undergradMajor' | 'gradSchoolMajor';
+
 const UndergradPage = () => {
-  const [selected, setSelected] = useState<'undergrad' | 'gradschool'>('undergrad');
+  const [selected, setSelected] = useState<SelectedType>('undergradMajor');
 
   return (
-    <div style={{ display: 'flex' }}>
-      <GraduateSidebar selected={selected} onSelect={setSelected} />
-      <GraduateMain selected={selected} onSelect={setSelected} />
-    </div>
+    <>
+      <GraduateSidebar submenu="undergrad" selected={selected} onSelect={setSelected} />
+      <GraduateMain submenu="undergrad" selected={selected} onSelect={setSelected} />
+    </>
   );
 };
 
 export default UndergradPage;
-
-
