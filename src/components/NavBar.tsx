@@ -1,5 +1,7 @@
 import { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
+import { useAuth } from '../contexts/AuthContext';
+import { useNavigate } from 'react-router-dom';
 
 interface NavBarProps {
   isOpen: boolean;
@@ -8,7 +10,15 @@ interface NavBarProps {
 
 const NavBar = ({ isOpen, onClose }: NavBarProps) => {
   const location = useLocation();
-  const [openMenuIndex, setOpenMenuIndex] = useState<number | null>(null);
+  const navigate = useNavigate();
+  const { user, logout } = useAuth();
+  const [openedMenus, setOpenedMenus] = useState<Set<number>>(new Set());
+
+  const handleLogout = () => {
+    logout();
+    onClose();
+    navigate('/login');
+  };
 
   const menuItems = [
     {
@@ -58,10 +68,17 @@ const NavBar = ({ isOpen, onClose }: NavBarProps) => {
   ];
 
   const handleMenuClick = (index: number, e: React.MouseEvent) => {
-    // 모바일 화면에서는 서브메뉴 토글 (페이지 이동 안 함)
+    // 768px 이하에서만 서브메뉴 토글 (페이지 이동 안 함)
     if (window.innerWidth <= 768) {
       e.preventDefault();
-      setOpenMenuIndex(openMenuIndex === index ? null : index);
+      // 이미 열려있으면 닫고, 닫혀있으면 열기 (다른 메뉴는 유지)
+      const newOpenedMenus = new Set(openedMenus);
+      if (newOpenedMenus.has(index)) {
+        newOpenedMenus.delete(index);
+      } else {
+        newOpenedMenus.add(index);
+      }
+      setOpenedMenus(newOpenedMenus);
     } else {
       // 데스크톱에서는 정상 동작
       onClose();
@@ -70,12 +87,12 @@ const NavBar = ({ isOpen, onClose }: NavBarProps) => {
 
   const handleSubmenuClick = () => {
     onClose();
-    setOpenMenuIndex(null);
+    setOpenedMenus(new Set());
   };
 
   const getMenuPath = (item: typeof menuItems[0]) => {
     // 데스크톱: 현재 경로가 이 메뉴 아래에 있으면 유지, 아니면 첫 번째 하위메뉴로
-    // 모바일: 클릭 시 서브메뉴만 열리도록 하기 위해 '#' 반환
+    // 768px 이하: 클릭 시 서브메뉴만 열리도록 하기 위해 '#' 반환
     if (window.innerWidth <= 768) {
       return '#';
     }
@@ -85,10 +102,22 @@ const NavBar = ({ isOpen, onClose }: NavBarProps) => {
 
   return (
     <nav className={`main-nav ${isOpen ? 'open' : ''}`}>
+      {/* 모바일 사용자 섹션 (CSS로 표시/숨김 제어) */}
+      {user && (
+        <div className="mobile-user-section">
+          <div className="mobile-user-info">
+            <span className="mobile-user-name">{user.studentId}님</span>
+            <button onClick={handleLogout} className="mobile-logout-btn">
+              로그아웃
+            </button>
+          </div>
+        </div>
+      )}
+      
       <ul className="nav-menu">
         {menuItems.map((item, index) => {
           const isActive = location.pathname.startsWith(item.path.split('/').slice(0, 2).join('/'));
-          const isMenuOpen = openMenuIndex === index;
+          const isMenuOpen = openedMenus.has(index);
           
           return (
             <li 
