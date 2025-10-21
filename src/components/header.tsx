@@ -30,6 +30,20 @@ const Header = () => {
     setIsMobileMenuOpen(false);
   }, [location.pathname]);
 
+  // 화면 크기 변경 시 모바일 메뉴 자동 닫기 (1300px 이상으로 커질 때)
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth > 1300 && isMobileMenuOpen) {
+        setIsMobileMenuOpen(false);
+      }
+    };
+
+    window.addEventListener('resize', handleResize);
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, [isMobileMenuOpen]);
+
   const handleLogout = () => {
     logout();
     navigate('/login');
@@ -77,28 +91,13 @@ const Header = () => {
               
               <div className="header-right">
                 {user && (
-                  <span style={{
-                    marginRight: '15px',
-                    fontSize: '14px',
-                    color: '#333',
-                    fontWeight: '500'
-                  }}>
+                  <span className="user-info">
                     {user.studentId}님
                   </span>
                 )}
                 <button 
                   onClick={handleLogout}
                   className="logout-btn"
-                  style={{
-                    backgroundColor: '#dc3545',
-                    color: 'white',
-                    border: 'none',
-                    padding: '8px 16px',
-                    borderRadius: '4px',
-                    cursor: 'pointer',
-                    fontSize: '14px',
-                    fontWeight: '500'
-                  }}
                 >
                   로그아웃
                 </button>

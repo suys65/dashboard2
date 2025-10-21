@@ -20,7 +20,7 @@ const GraduateMain: React.FC<Props> = ({ submenu, selected, onSelect }) => {
   // 대시보드 URL 매핑
   const dashboardMap: Record<SelectedType, { url: string; title: string }> = {
     undergradMajor: { url: DASHBOARD_PATHS.GRADUATE_UNDERGRAD_MAJOR, title: '학과별 졸업자 수' },
-    gradSchoolMajor: { url: DASHBOARD_PATHS.GRADUATE_SCHOOL_MAJOR, title: '학과별 지대 대학원 진학 학생 수' }
+    gradSchoolMajor: { url: DASHBOARD_PATHS.GRADUATE_SCHOOL_MAJOR, title: '학과별 자대 대학원 진학 학생 수' }
   };
 
   const currentDashboard = dashboardMap[selected];
@@ -47,7 +47,7 @@ const GraduateMain: React.FC<Props> = ({ submenu, selected, onSelect }) => {
             className={selected === 'gradSchoolMajor' ? 'active-btn' : 'inactive-btn'}
             onClick={() => onSelect('gradSchoolMajor')}
           >
-            학과별 지대 대학원 진학 학생 수
+            학과별 자대 대학원 진학 학생 수
           </button>
         )}
       </div>
