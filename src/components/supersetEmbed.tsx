@@ -21,7 +21,7 @@ const SupersetEmbed = () => {
   }
 
   const overrideSrc = (import.meta as any).env?.VITE_SUPERSET_IFRAME_SRC || '';
-  const defaultSrc = 'https://logic-dubai-shorter-towers.trycloudflare.com/superset/dashboard/p/kDoOpQZPdzQ/';
+  const defaultSrc = 'https://configure-nebraska-handed-rent.trycloudflare.com/superset/dashboard/p/dbDZ2Qe29yQ/';
   const iframeSrc = overrideSrc || defaultSrc;
 
   const isHttpsPage = typeof window !== 'undefined' && window.location.protocol === 'https:';
