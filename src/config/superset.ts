@@ -12,7 +12,7 @@ export const DASHBOARD_PATHS = {
   MAIN: '/superset/dashboard/p/dbDZ2Qe29yQ/?standalone=true&hide_title=1',
   
   // 입학 > 신입생 충원
-  ADMISSION_RECRUIT_MAJOR: '/superset/dashboard/p/MQq06KP21Or/?standalone=true&hide_title=1', // 학과별 신입생 수
+  ADMISSION_RECRUIT_MAJOR: '/superset/dashboard/p/MQq06KP21Or/?standalone=2&hide_title=1', // 학과별 신입생 수
   ADMISSION_RECRUIT_EXAM: '/superset/dashboard/p/Qq06KXP21Or/?standalone=true&hide_title=1', // 전형별 신입생 수
   
   // 입학 > 신입생 성적
@@ -61,7 +61,7 @@ export const DASHBOARD_PATHS = {
   GRADUATE_UNDERGRAD_MAJOR: '', // 학과별 졸업자 수
   
   // 졸업 > 대학원
-  GRADUATE_SCHOOL_MAJOR: '/superset/dashboard/p/D0q6vnR6ERV/?standalone=true&hide_title=1', // 학과별 지대 대학원 진학 학생 수
+  GRADUATE_SCHOOL_MAJOR: '/superset/dashboard/p/D0q6vnR6ERV/?standalone=2&hide_title=1', // 학과별 지대 대학원 진학 학생 수
   
   // 기타 > 교육만족도
   ETC_SATISFACTION_MAJOR: '', // 학과별 평균 교육 만족도
