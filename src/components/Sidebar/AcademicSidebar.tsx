@@ -15,7 +15,7 @@ type Props = {
   onSelect: (key: SelectedType) => void;
 };
 
-const AcademicSidebar: React.FC<Props> = ({ submenu, selected, onSelect }) => {
+const AcademicSidebar: React.FC<Props> = ({ selected, onSelect }) => {
   const navigate = useNavigate();
   const location = useLocation();
 

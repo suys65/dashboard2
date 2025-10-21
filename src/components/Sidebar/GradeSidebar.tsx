@@ -13,7 +13,7 @@ type Props = {
   onSelect: (key: SelectedType) => void;
 };
 
-const GradeSidebar: React.FC<Props> = ({ submenu, selected, onSelect }) => {
+const GradeSidebar: React.FC<Props> = ({ selected, onSelect }) => {
   const navigate = useNavigate();
   const location = useLocation();
 

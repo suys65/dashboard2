@@ -8,7 +8,7 @@ type Props = {
   onSelect: (key: 'recruitMajor' | 'recruitExam' | 'gradeMajor' | 'gradeExam') => void;
 };
 
-const AdmissionSidebar: React.FC<Props> = ({ submenu, selected, onSelect }) => {
+const AdmissionSidebar: React.FC<Props> = ({ selected, onSelect }) => {
   const navigate = useNavigate();
   const location = useLocation();
 

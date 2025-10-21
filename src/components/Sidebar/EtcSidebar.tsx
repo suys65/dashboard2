@@ -10,7 +10,7 @@ type Props = {
   onSelect: (key: SelectedType) => void;
 };
 
-const EtcSidebar: React.FC<Props> = ({ submenu, selected, onSelect }) => {
+const EtcSidebar: React.FC<Props> = ({ selected, onSelect }) => {
   const navigate = useNavigate();
   const location = useLocation();
 
