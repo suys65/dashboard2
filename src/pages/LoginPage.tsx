@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../contexts/AuthContext';
 import api from '../utils/api';
+import logo from '../assets/logo.png';
 
 const LoginPage = () => {
   const navigate = useNavigate();
@@ -48,7 +49,18 @@ const LoginPage = () => {
   return (
     <section className="login-container">
       <div className="login-card">
-        <div className="login-left" />
+        <div className="login-left">
+          <div className="login-left-content">
+            <img src={logo} alt="인천대학교 로고" className="login-logo" />
+            <h1 className="login-welcome">환영합니다</h1>
+            <p className="login-subtitle">학사행정 대시보드</p>
+            <div className="login-decoration">
+              <div className="decoration-circle decoration-circle-1"></div>
+              <div className="decoration-circle decoration-circle-2"></div>
+              <div className="decoration-circle decoration-circle-3"></div>
+            </div>
+          </div>
+        </div>
         <div className="login-right">
           <h2 className="login-title">로그인</h2>
           
@@ -62,7 +74,7 @@ const LoginPage = () => {
                 id="studentId"
                 type="text"
                 inputMode="numeric"
-                placeholder="학번/사번을 입력해주세요. (숫자만)"
+                placeholder="학번/사번을 입력해주세요."
                 value={studentId}
                 onChange={(e) => {
                   const onlyDigits = e.target.value.replace(/\D/g, '');
@@ -78,7 +90,7 @@ const LoginPage = () => {
                 id="password"
                 type="password"
                 inputMode="text"
-                placeholder="비밀번호를 입력해주세요. (한글 제외)"
+                placeholder="비밀번호를 입력해주세요."
                 value={password}
                 onChange={(e) => {
                   // 한글 자모 및 완성형만 제거, 나머지(영문/숫자/특수문자)는 허용
