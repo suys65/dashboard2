@@ -123,6 +123,7 @@ header {
     height: var(--header-height);
     max-width: var(--container-max-width);
     margin: 0 auto;
+    overflow: visible; /* 드롭다운이 보이도록 */
 }
 
 .logo-section {
@@ -141,6 +142,34 @@ header {
     align-items: center;
     gap: var(--spacing-md);
     flex-shrink: 0;
+    white-space: nowrap;
+}
+
+/* 사용자 정보 */
+.user-info {
+    margin-right: 15px;
+    font-size: 14px;
+    color: var(--text-primary);
+    font-weight: 500;
+    white-space: nowrap;
+}
+
+/* 로그아웃 버튼 */
+.logout-btn {
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    white-space: nowrap;
+    transition: background-color var(--transition-normal);
+}
+
+.logout-btn:hover {
+    background-color: #c82333;
 }
 
 .signup-link {
@@ -803,10 +832,10 @@ header {
     }
 }
 
-/* 1100px 이하 - 로그아웃 버튼 숨김 */
-@media (max-width: 1100px) {
+/* 1300px 이하 - 로그아웃 버튼 전부 숨김 */
+@media (max-width: 1300px) {
     .header-right {
-        display: none;
+        display: none !important;
     }
 }
 
