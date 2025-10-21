@@ -1098,7 +1098,7 @@ header {
     }
 }
 
-/* 오버레이 배경 - 메뉴보다 뒤에 위치 */
+/* 오버레이 배경 - 사이드바 위, 메뉴보다 뒤에 위치 */
 .mobile-overlay {
     display: none;
     position: fixed;
@@ -1107,7 +1107,7 @@ header {
     width: 100%;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.5);
-    z-index: 999;
+    z-index: 1000;
     opacity: 0;
     transition: opacity var(--transition-normal);
 }
