@@ -58,7 +58,7 @@ export const DASHBOARD_PATHS = {
   GRADE_GENERAL_YEAR: '', // 학년별 평균 교양학점
   
   // 졸업 > 졸업생
-  GRADUATE_UNDERGRAD_MAJOR: '', // 학과별 졸업자 수
+  GRADUATE_UNDERGRAD_MAJOR: '/superset/dashboard/p/pPV2qgrjWnk/?standalone=true&hide_title=1', // 학과별 졸업자 수
   
   // 졸업 > 대학원
   GRADUATE_SCHOOL_MAJOR: '/superset/dashboard/p/D0q6vnR6ERV/?standalone=2&hide_title=1', // 학과별 지대 대학원 진학 학생 수
