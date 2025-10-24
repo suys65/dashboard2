@@ -8,9 +8,9 @@
 :root {
     /* 레이아웃 변수 */
     --header-height: 70px;
-    --sidebar-width: 260px;
+    --sidebar-width: 200px;
     --sidebar-left-margin: 110px;
-    --content-left-margin: 385px;
+    --content-left-margin: 325px;
     --container-max-width: 1600px;
     
     /* 간격 변수 */
@@ -51,18 +51,18 @@
 /* 태블릿 크기 변수 */
 @media (max-width: 1440px) {
     :root {
-        --sidebar-width: 240px;
+        --sidebar-width: 190px;
         --sidebar-left-margin: 80px;
-        --content-left-margin: 340px;
+        --content-left-margin: 290px;
     }
 }
 
 /* 소형 데스크톱/태블릿 변수 */
 @media (max-width: 1200px) {
     :root {
-        --sidebar-width: 210px;
+        --sidebar-width: 170px;
         --sidebar-left-margin: 50px;
-        --content-left-margin: 280px;
+        --content-left-margin: 240px;
         --spacing-xl: 20px;
     }
 }
@@ -70,9 +70,9 @@
 /* 태블릿 변수 */
 @media (max-width: 1024px) {
     :root {
-        --sidebar-width: 180px;
+        --sidebar-width: 150px;
         --sidebar-left-margin: 15px;
-        --content-left-margin: 215px;
+        --content-left-margin: 185px;
         --spacing-xl: 15px;
     }
 }
@@ -340,9 +340,8 @@ header {
     border-radius: 6px;
     margin: 2px 0;
     cursor: pointer;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
+    word-wrap: break-word;
+    line-height: 1.4;
 }
 
 /* 활성화 상태 */
@@ -360,9 +359,8 @@ header {
     margin: 2px 0;
     font-weight: 500;
     cursor: pointer;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
+    word-wrap: break-word;
+    line-height: 1.4;
 }
 
 .sidebar-submenu-btn:hover {
