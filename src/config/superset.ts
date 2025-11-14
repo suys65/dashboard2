@@ -20,7 +20,7 @@ export const DASHBOARD_PATHS = {
   ADMISSION_GRADE_EXAM: '', // 전형별 신입생 성적
   
   // 학적 > 휴복학
-  ACADEMIC_LEAVE_MAJOR: '/superset/dashboard/p/xQo2pN5jNG3/?standalone=true&hide_title=1', // 학과별 휴복학생 수
+  ACADEMIC_LEAVE_MAJOR: '/superset/dashboard/p/Bn92JKE41Dx/?standalone=true&hide_title=1', // 학과별 휴복학생 수
   ACADEMIC_LEAVE_GRADE: '/superset/dashboard/p/bDZ2Qm129yQ/?standalone=true&hide_title=1', // 학년별 휴복학생 수
   
   // 학적 > 자퇴
