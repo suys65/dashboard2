@@ -4,6 +4,10 @@ import { useAuth } from '../contexts/AuthContext';
 import api from '../utils/api';
 import logo from '../assets/logo.png';
 
+// ⚠️ 임시 로그인 제한 설정 (나중에 활성화 시 이 배열을 비우면 됩니다)
+// 빈 배열([])로 설정하면 모든 학번 허용
+const ALLOWED_STUDENT_IDS = ['202457011', '202521072'];
+
 const LoginPage = () => {
   const navigate = useNavigate();
   const { login } = useAuth();
@@ -19,6 +23,12 @@ const LoginPage = () => {
     
     if (!studentId || !password) {
       alert('학번과 비밀번호를 입력해주세요.');
+      return;
+    }
+
+    // 임시 학번 제한 체크
+    if (ALLOWED_STUDENT_IDS.length > 0 && !ALLOWED_STUDENT_IDS.includes(studentId)) {
+      alert('로그인이 활성화되지 않았습니다.');
       return;
     }
 

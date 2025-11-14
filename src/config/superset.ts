@@ -4,7 +4,7 @@
 // 환경 변수가 있으면 사용하고, 없으면 기본값 사용
 export const SUPERSET_BASE_URL = 
   import.meta.env.VITE_SUPERSET_BASE_URL || 
-  'https://est-expenses-fuel-careful.trycloudflare.com';
+  'https://dakota-deposit-difficulty-ntsc.trycloudflare.com';
 
 // 대시보드 경로 상수
 export const DASHBOARD_PATHS = {
@@ -20,7 +20,7 @@ export const DASHBOARD_PATHS = {
   ADMISSION_GRADE_EXAM: '', // 전형별 신입생 성적
   
   // 학적 > 휴복학
-  ACADEMIC_LEAVE_MAJOR: '', // 학과별 휴복학생 수
+  ACADEMIC_LEAVE_MAJOR: '/superset/dashboard/p/xQo2pN5jNG3/?standalone=true&hide_title=1', // 학과별 휴복학생 수
   ACADEMIC_LEAVE_GRADE: '', // 학년별 휴복학생 수
   
   // 학적 > 자퇴
