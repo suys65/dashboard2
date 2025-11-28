@@ -20,16 +20,16 @@ export const DASHBOARD_PATHS = {
   ADMISSION_GRADE_EXAM: '', // 전형별 신입생 성적
   
   // 학적 > 휴복학
-  ACADEMIC_LEAVE_MAJOR: '/superset/dashboard/p/Bn92JKE41Dx/?standalone=true&hide_title=1', // 학과별 휴복학생 수
-  ACADEMIC_LEAVE_GRADE: '/superset/dashboard/p/bDZ2Qm129yQ/?standalone=true&hide_title=1', // 학년별 휴복학생 수
+  ACADEMIC_LEAVE_MAJOR: '/superset/dashboard/p/MmO20EV4zqk/?standalone=true&hide_title=1', // 학과별 휴복학생 수
+  ACADEMIC_LEAVE_GRADE: '/superset/dashboard/p/D0q6vOO2ERV/?standalone=true&hide_title=1', // 학년별 휴복학생 수
   
   // 학적 > 자퇴
-  ACADEMIC_DROPOUT_MAJOR: '/superset/dashboard/p/8WE4Rme2NnZ/?standalone=true&hide_title=1', // 학과별 자퇴생 수
-  ACADEMIC_DROPOUT_GRADE: '', // 학년별 자퇴생 수
+  ACADEMIC_DROPOUT_MAJOR: '/superset/dashboard/p/GnDjnYX4JQY/?standalone=true&hide_title=1', // 학과별 자퇴생 수
+  ACADEMIC_DROPOUT_GRADE: '/superset/dashboard/p/Z1D4NPe6B3E/?standalone=true&hide_title=1', // 학년별 자퇴생 수
   
   // 학적 > 전과
-  ACADEMIC_TRANSFER_IN_MAJOR: '', // 학과별 전입 학생 수
-  ACADEMIC_TRANSFER_OUT_MAJOR: '', // 학과별 전출 학생 수
+  ACADEMIC_TRANSFER_IN_MAJOR: '/superset/dashboard/p/0akjdYA69xG/?standalone=true&hide_title=1', // 학과별 전입 학생 수
+  ACADEMIC_TRANSFER_OUT_MAJOR: '/superset/dashboard/p/L1ojmRg6Wy0/?standalone=true&hide_title=1', // 학과별 전출 학생 수
   ACADEMIC_TRANSFER_IN_GRADE: '', // 학년별 전입 학생 수
   ACADEMIC_TRANSFER_OUT_GRADE: '', // 학년별 전출 학생 수
   
