@@ -32,7 +32,7 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
   // ⚠️ 임시: 로그인 우회 - 나중에 활성화 시 false로 변경
   const [isAuthenticated, setIsAuthenticated] = useState(true);
   const [user, setUser] = useState<User | null>({ studentId: 'temp', name: '임시 사용자' });
-  const [isLoading, setIsLoading] = useState(false);
+  const [isLoading, _setIsLoading] = useState(false);
 
   useEffect(() => {
     // ⚠️ 임시: 로그인 우회 중이므로 주석 처리
