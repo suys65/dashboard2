@@ -29,11 +29,15 @@ interface AuthProviderProps {
 }
 
 export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
-  const [isAuthenticated, setIsAuthenticated] = useState(false);
-  const [user, setUser] = useState<User | null>(null);
-  const [isLoading, setIsLoading] = useState(true);
+  // ⚠️ 임시: 로그인 우회 - 나중에 활성화 시 false로 변경
+  const [isAuthenticated, setIsAuthenticated] = useState(true);
+  const [user, setUser] = useState<User | null>({ studentId: 'temp', name: '임시 사용자' });
+  const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
+    // ⚠️ 임시: 로그인 우회 중이므로 주석 처리
+    // 나중에 로그인 활성화 시 아래 코드의 주석을 해제하세요
+    /*
     // 페이지 로드 시 로컬 스토리지에서 인증 상태 확인
     const checkAuthStatus = () => {
       const authToken = localStorage.getItem('authToken');
@@ -51,6 +55,7 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
     };
 
     checkAuthStatus();
+    */
   }, []);
 
   const login = (studentId: string, name?: string) => {
