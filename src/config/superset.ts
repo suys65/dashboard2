@@ -4,7 +4,7 @@
 // 환경 변수가 있으면 사용하고, 없으면 기본값 사용
 export const SUPERSET_BASE_URL = 
   import.meta.env.VITE_SUPERSET_BASE_URL || 
-  'https://dakota-deposit-difficulty-ntsc.trycloudflare.com';
+  'https://utc-infrastructure-caribbean-converted.trycloudflare.com';
 
 // 대시보드 경로 상수
 export const DASHBOARD_PATHS = {
