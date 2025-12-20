@@ -50,7 +50,7 @@ export const DASHBOARD_PATHS = {
   GRADE_TOTAL_YEAR: '', // 학년별 평균 전체학점
   
   // 성적 > 전공학점
-  GRADE_MAJOR_MAJOR: '', // 학과별 평균 전공학점
+  GRADE_MAJOR_MAJOR: '/superset/dashboard/p/8lb4eK7607o/?standalone=true&hide_title=1', // 학과별 평균 전공학점
   GRADE_MAJOR_YEAR: '', // 학년별 평균 전공학점
   
   // 성적 > 교양학점
