@@ -29,8 +29,8 @@ export const DASHBOARD_PATHS = {
   
   // 학적 > 전과
   ACADEMIC_TRANSFER_IN_MAJOR: '/superset/dashboard/p/0akjdYA69xG/?standalone=true&hide_title=1', // 학과별 전입 학생 수
-  ACADEMIC_TRANSFER_OUT_MAJOR: '/superset/dashboard/p/L1ojmRg6Wy0/?standalone=true&hide_title=1', // 학과별 전출 학생 수
-  ACADEMIC_TRANSFER_IN_GRADE: '', // 학년별 전입 학생 수
+  ACADEMIC_TRANSFER_OUT_MAJOR: '/superset/dashboard/p/xQo2pX72NG3/?standalone=true&hide_title=1', // 학과별 전출 학생 수
+  ACADEMIC_TRANSFER_IN_GRADE: '/superset/dashboard/p/L1ojmRg6Wy0/?standalone=true&hide_title=1', // 학년별 전입 학생 수
   ACADEMIC_TRANSFER_OUT_GRADE: '', // 학년별 전출 학생 수
   
   // 학적 > 부복수전공
@@ -46,12 +46,12 @@ export const DASHBOARD_PATHS = {
   ACADEMIC_INTER_BELONG_GRADE: '', // 소속학과-학년별 학생 수
   
   // 성적 > 전체학점
-  GRADE_TOTAL_MAJOR: '', // 학과별 평균 전체학점
+  GRADE_TOTAL_MAJOR: '/superset/dashboard/p/Z1D4Nyl2B3E/?standalone=true&hide_title=1', // 학과별 평균 전체학점
   GRADE_TOTAL_YEAR: '', // 학년별 평균 전체학점
   
   // 성적 > 전공학점
   GRADE_MAJOR_MAJOR: '/superset/dashboard/p/8lb4eK7607o/?standalone=true&hide_title=1', // 학과별 평균 전공학점
-  GRADE_MAJOR_YEAR: '', // 학년별 평균 전공학점
+  GRADE_MAJOR_YEAR: '/superset/dashboard/p/NWn6ZZN6YKm/?standalone=true&hide_title=1', // 학년별 평균 전공학점
   
   // 성적 > 교양학점
   GRADE_GENERAL_MAJOR: '', // 학과별 평균 교양학점
