@@ -4,33 +4,33 @@
 // 환경 변수가 있으면 사용하고, 없으면 기본값 사용
 export const SUPERSET_BASE_URL = 
   import.meta.env.VITE_SUPERSET_BASE_URL || 
-  'https://utc-infrastructure-caribbean-converted.trycloudflare.com';
+  'https://superset.squidjiny.com';
 
 // 대시보드 경로 상수
 export const DASHBOARD_PATHS = {
   // 메인 화면
-  MAIN: '/superset/dashboard/p/dbDZ2Qe29yQ/?standalone=true&hide_title=1',
+  MAIN: '/superset/dashboard/12/?standalone=true&hide_title=1',
   
   // 입학 > 신입생 충원
-  ADMISSION_RECRUIT_MAJOR: '/superset/dashboard/p/MQq06KP21Or/?standalone=2&hide_title=1', // 학과별 신입생 수
-  ADMISSION_RECRUIT_EXAM: '/superset/dashboard/p/Qq06KXP21Or/?standalone=true&hide_title=1', // 전형별 신입생 수
+  ADMISSION_RECRUIT_MAJOR: '/superset/dashboard/16/?native_filters_key=uwah6xYekg4&standalone=true&hide_title=1', // 학과별 신입생 수
+  ADMISSION_RECRUIT_EXAM: '/superset/dashboard/9/?native_filters_key=x9ML0NYzibc&standalone=true&hide_title=1', // 전형별 신입생 수
   
   // 입학 > 신입생 성적
-  ADMISSION_GRADE_MAJOR: '', // 학과별 신입생 성적
+  ADMISSION_GRADE_MAJOR: '/superset/dashboard/17/?native_filters_key=9MqGGYxyfUU&standalone=true&hide_title=1', // 학과별 신입생 성적
   ADMISSION_GRADE_EXAM: '', // 전형별 신입생 성적
   
   // 학적 > 휴복학
-  ACADEMIC_LEAVE_MAJOR: '/superset/dashboard/p/MmO20EV4zqk/?standalone=true&hide_title=1', // 학과별 휴복학생 수
-  ACADEMIC_LEAVE_GRADE: '/superset/dashboard/p/D0q6vOO2ERV/?standalone=true&hide_title=1', // 학년별 휴복학생 수
+  ACADEMIC_LEAVE_MAJOR: '/superset/dashboard/5/?native_filters_key=1f3xgiYEo50&standalone=true&hide_title=1', // 학과별 휴복학생 수
+  ACADEMIC_LEAVE_GRADE: '/superset/dashboard/15/?standalone=true&hide_title=1', // 학년별 휴복학생 수
   
   // 학적 > 자퇴
-  ACADEMIC_DROPOUT_MAJOR: '/superset/dashboard/p/GnDjnYX4JQY/?standalone=true&hide_title=1', // 학과별 자퇴생 수
-  ACADEMIC_DROPOUT_GRADE: '/superset/dashboard/p/Z1D4NPe6B3E/?standalone=true&hide_title=1', // 학년별 자퇴생 수
+  ACADEMIC_DROPOUT_MAJOR: '/superset/dashboard/14/?standalone=true&hide_title=1', // 학과별 자퇴생 수
+  ACADEMIC_DROPOUT_GRADE: '/superset/dashboard/13/?native_filters_key=uxu0q0RdHlQ&standalone=true&hide_title=1', // 학년별 자퇴생 수
   
   // 학적 > 전과
-  ACADEMIC_TRANSFER_IN_MAJOR: '/superset/dashboard/p/0akjdYA69xG/?standalone=true&hide_title=1', // 학과별 전입 학생 수
-  ACADEMIC_TRANSFER_OUT_MAJOR: '/superset/dashboard/p/xQo2pX72NG3/?standalone=true&hide_title=1', // 학과별 전출 학생 수
-  ACADEMIC_TRANSFER_IN_GRADE: '/superset/dashboard/p/L1ojmRg6Wy0/?standalone=true&hide_title=1', // 학년별 전입 학생 수
+  ACADEMIC_TRANSFER_IN_MAJOR: '', // 학과별 전입 학생 수
+  ACADEMIC_TRANSFER_OUT_MAJOR: '/superset/dashboard/2/?native_filters_key=-YnJ4-MOMts&standalone=true&hide_title=1', // 학과별 전출 학생 수
+  ACADEMIC_TRANSFER_IN_GRADE: '', // 학년별 전입 학생 수
   ACADEMIC_TRANSFER_OUT_GRADE: '', // 학년별 전출 학생 수
   
   // 학적 > 부복수전공
@@ -46,22 +46,22 @@ export const DASHBOARD_PATHS = {
   ACADEMIC_INTER_BELONG_GRADE: '', // 소속학과-학년별 학생 수
   
   // 성적 > 전체학점
-  GRADE_TOTAL_MAJOR: '/superset/dashboard/p/Z1D4Nyl2B3E/?standalone=true&hide_title=1', // 학과별 평균 전체학점
+  GRADE_TOTAL_MAJOR: '/superset/dashboard/8/?native_filters_key=37adA_q5qyo&standalone=true&hide_title=1', // 학과별 평균 전체학점
   GRADE_TOTAL_YEAR: '', // 학년별 평균 전체학점
   
   // 성적 > 전공학점
-  GRADE_MAJOR_MAJOR: '/superset/dashboard/p/8lb4eK7607o/?standalone=true&hide_title=1', // 학과별 평균 전공학점
-  GRADE_MAJOR_YEAR: '/superset/dashboard/p/NWn6ZZN6YKm/?standalone=true&hide_title=1', // 학년별 평균 전공학점
+  GRADE_MAJOR_MAJOR: '/superset/dashboard/10/?native_filters_key=b4mK3y4Ubrw&standalone=true&hide_title=1', // 학과별 평균 전공학점
+  GRADE_MAJOR_YEAR: '/superset/dashboard/11/?standalone=true&hide_title=1', // 학년별 평균 전공학점
   
   // 성적 > 교양학점
   GRADE_GENERAL_MAJOR: '', // 학과별 평균 교양학점
   GRADE_GENERAL_YEAR: '', // 학년별 평균 교양학점
   
   // 졸업 > 졸업생
-  GRADUATE_UNDERGRAD_MAJOR: '/superset/dashboard/p/pPV2qgrjWnk/?standalone=true&hide_title=1', // 학과별 졸업자 수
+  GRADUATE_UNDERGRAD_MAJOR: '/superset/dashboard/19/?native_filters_key=LRD-VNeU6uI&standalone=true&hide_title=1', // 학과별 졸업자 수
   
   // 졸업 > 대학원
-  GRADUATE_SCHOOL_MAJOR: '/superset/dashboard/p/D0q6vnR6ERV/?standalone=2&hide_title=1', // 학과별 지대 대학원 진학 학생 수
+  GRADUATE_SCHOOL_MAJOR: '/superset/dashboard/18/?native_filters_key=fTd8cotDBns&standalone=true&hide_title=1', // 학과별 대학원 진학 학생 추이
   
   // 기타 > 교육만족도
   ETC_SATISFACTION_MAJOR: '', // 학과별 평균 교육 만족도
@@ -75,4 +75,3 @@ export const getDashboardUrl = (path: string): string => {
   if (!path) return '';
   return `${SUPERSET_BASE_URL}${path}`;
 };
-
