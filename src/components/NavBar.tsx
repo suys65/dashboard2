@@ -1,7 +1,5 @@
 import { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { useAuth } from '../contexts/AuthContext';
-import { useNavigate } from 'react-router-dom';
 
 interface NavBarProps {
   isOpen: boolean;
@@ -10,15 +8,7 @@ interface NavBarProps {
 
 const NavBar = ({ isOpen, onClose }: NavBarProps) => {
   const location = useLocation();
-  const navigate = useNavigate();
-  const { user, logout } = useAuth();
   const [openedMenus, setOpenedMenus] = useState<Set<number>>(new Set());
-
-  const handleLogout = () => {
-    logout();
-    onClose();
-    navigate('/login');
-  };
 
   const menuItems = [
     {
@@ -102,18 +92,6 @@ const NavBar = ({ isOpen, onClose }: NavBarProps) => {
 
   return (
     <nav className={`main-nav ${isOpen ? 'open' : ''}`}>
-      {/* 모바일 사용자 섹션 (CSS로 표시/숨김 제어) */}
-      {user && (
-        <div className="mobile-user-section">
-          <div className="mobile-user-info">
-            <span className="mobile-user-name">{user.studentId}님</span>
-            <button onClick={handleLogout} className="mobile-logout-btn">
-              로그아웃
-            </button>
-          </div>
-        </div>
-      )}
-      
       <ul className="nav-menu">
         {menuItems.map((item, index) => {
           const isActive = location.pathname.startsWith(item.path.split('/').slice(0, 2).join('/'));

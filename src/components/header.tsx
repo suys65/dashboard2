@@ -3,12 +3,9 @@ import { useState, useEffect } from 'react';
 import logo from '../assets/logo.png';
 import NavBar from './NavBar';
 import { useLocation, useNavigate } from 'react-router-dom';
-import { useAuth } from '../contexts/AuthContext';
-
 const Header = () => {
   const location = useLocation();
   const navigate = useNavigate();
-  const { logout, user } = useAuth();
   const isLoginPage = location.pathname.startsWith('/login');
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
@@ -43,11 +40,6 @@ const Header = () => {
       window.removeEventListener('resize', handleResize);
     };
   }, [isMobileMenuOpen]);
-
-  const handleLogout = () => {
-    logout();
-    navigate('/login');
-  };
 
   const handleLogoClick = () => {
     navigate('/');
@@ -89,19 +81,6 @@ const Header = () => {
             <>
               <NavBar isOpen={isMobileMenuOpen} onClose={closeMobileMenu} />
               
-              <div className="header-right">
-                {user && (
-                  <span className="user-info">
-                    {user.studentId}님
-                  </span>
-                )}
-                <button 
-                  onClick={handleLogout}
-                  className="logout-btn"
-                >
-                  로그아웃
-                </button>
-              </div>
 
               {/* 햄버거 메뉴 버튼 */}
               <button 
