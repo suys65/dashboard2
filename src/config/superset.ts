@@ -66,8 +66,9 @@ export const DASHBOARD_PATHS = {
   // 기타 > 교육만족도
   ETC_SATISFACTION_MAJOR: '', // 학과별 평균 교육 만족도
   
-  // 기타 > 교수현황
-  ETC_STAFF_MAJOR: '', // 학과별 교수 수
+  // 기타 > 교직원 현황
+  ETC_STAFF_PROFESSOR: '/superset/dashboard/p/7Va03RXK5W4/?standalone=true&hide_title=1', // 학과별 교수 수
+  ETC_STAFF_ASSISTANT: '/superset/dashboard/p/q3aevw2KXdJ/?standalone=true&hide_title=1', // 학과별 조교 수
 };
 
 // 전체 URL 생성 헬퍼 함수

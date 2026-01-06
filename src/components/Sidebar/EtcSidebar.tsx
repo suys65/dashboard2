@@ -2,7 +2,7 @@
 import React from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 
-type SelectedType = 'satisfactionMajor' | 'staffMajor';
+type SelectedType = 'satisfactionMajor' | 'staffProfessor' | 'staffAssistant';
 
 type Props = {
   submenu: 'satisfaction' | 'staff';
@@ -36,19 +36,30 @@ const EtcSidebar: React.FC<Props> = ({ selected, onSelect }) => {
           </ul>
         </li>
 
-        {/* 교수현황 */}
+        {/* 교직원 현황 */}
         <li className="sidebar-section">
-          <div className="sidebar-section-title">교수현황</div>
+          <div className="sidebar-section-title">교직원 현황</div>
           <ul className="sidebar-submenu" style={{ display: 'block' }}>
             <li>
               <button
-                className={selected === 'staffMajor' ? 'sidebar-submenu-btn-active' : 'sidebar-submenu-btn'}
+                className={selected === 'staffProfessor' ? 'sidebar-submenu-btn-active' : 'sidebar-submenu-btn'}
                 onClick={() => {
-                  onSelect('staffMajor');
+                  onSelect('staffProfessor');
                   if (location.pathname !== '/etc/staff') navigate('/etc/staff');
                 }}
               >
                 학과별 교수 수
+              </button>
+            </li>
+            <li>
+              <button
+                className={selected === 'staffAssistant' ? 'sidebar-submenu-btn-active' : 'sidebar-submenu-btn'}
+                onClick={() => {
+                  onSelect('staffAssistant');
+                  if (location.pathname !== '/etc/staff') navigate('/etc/staff');
+                }}
+              >
+                학과별 조교 수
               </button>
             </li>
           </ul>

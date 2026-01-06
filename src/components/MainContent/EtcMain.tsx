@@ -2,7 +2,7 @@
 import React from 'react';
 import { getDashboardUrl, DASHBOARD_PATHS } from '../../config/superset';
 
-type SelectedType = 'satisfactionMajor' | 'staffMajor';
+type SelectedType = 'satisfactionMajor' | 'staffProfessor' | 'staffAssistant';
 
 type Props = {
   submenu: 'satisfaction' | 'staff';
@@ -14,13 +14,14 @@ const EtcMain: React.FC<Props> = ({ submenu, selected, onSelect }) => {
   // 하위메뉴 정보
   const submenuInfo = {
     satisfaction: { title: '교육만족도', breadcrumb: 'Home > 기타 > 교육만족도' },
-    staff: { title: '교수현황', breadcrumb: 'Home > 기타 > 교수현황' }
+    staff: { title: '교직원 현황', breadcrumb: 'Home > 기타 > 교직원 현황' }
   };
 
   // 대시보드 URL 매핑
   const dashboardMap: Record<SelectedType, { url: string; title: string }> = {
     satisfactionMajor: { url: DASHBOARD_PATHS.ETC_SATISFACTION_MAJOR, title: '학과별 평균 교육 만족도' },
-    staffMajor: { url: DASHBOARD_PATHS.ETC_STAFF_MAJOR, title: '학과별 교수 수' }
+    staffProfessor: { url: DASHBOARD_PATHS.ETC_STAFF_PROFESSOR, title: '학과별 교수 수' },
+    staffAssistant: { url: DASHBOARD_PATHS.ETC_STAFF_ASSISTANT, title: '학과별 조교 수' }
   };
 
   const currentDashboard = dashboardMap[selected];
@@ -43,12 +44,20 @@ const EtcMain: React.FC<Props> = ({ submenu, selected, onSelect }) => {
         )}
 
         {submenu === 'staff' && (
-          <button
-            className={selected === 'staffMajor' ? 'active-btn' : 'inactive-btn'}
-            onClick={() => onSelect('staffMajor')}
-          >
-            학과별 교수 수
-          </button>
+          <>
+            <button
+              className={selected === 'staffProfessor' ? 'active-btn' : 'inactive-btn'}
+              onClick={() => onSelect('staffProfessor')}
+            >
+              학과별 교수 수
+            </button>
+            <button
+              className={selected === 'staffAssistant' ? 'active-btn' : 'inactive-btn'}
+              onClick={() => onSelect('staffAssistant')}
+            >
+              학과별 조교 수
+            </button>
+          </>
         )}
       </div>
 

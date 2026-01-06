@@ -2,10 +2,10 @@ import { useState } from 'react';
 import EtcSidebar from '../../components/Sidebar/EtcSidebar';
 import EtcMain from '../../components/MainContent/EtcMain';
 
-type SelectedType = 'satisfactionMajor' | 'staffMajor';
+type SelectedType = 'satisfactionMajor' | 'staffProfessor' | 'staffAssistant';
 
 const StaffStatusPage = () => {
-  const [selected, setSelected] = useState<SelectedType>('staffMajor');
+  const [selected, setSelected] = useState<SelectedType>('staffProfessor');
 
   return (
     <>
