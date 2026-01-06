@@ -81,6 +81,8 @@ const Header = () => {
             <>
               <NavBar isOpen={isMobileMenuOpen} onClose={closeMobileMenu} />
               
+              {/* 레이아웃 유지용 빈 공간 */}
+              <div className="header-right"></div>
 
               {/* 햄버거 메뉴 버튼 */}
               <button 
