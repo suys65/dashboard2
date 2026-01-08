@@ -50,8 +50,8 @@ export const DASHBOARD_PATHS = {
   GRADE_TOTAL_YEAR: '/superset/dashboard/0224899d-013e-4414-818f-dd56b67d66e0/?native_filters_key=bNrUeFPRyvE&standalone=true&hide_title=1', // 학년별 평균 전체학점
   
   // 성적 > 전공학점
-  GRADE_MAJOR_MAJOR: '/superset/dashboard/10/?native_filters_key=b4mK3y4Ubrw&standalone=true&hide_title=1', // 학과별 평균 전공학점
-  GRADE_MAJOR_YEAR: '/superset/dashboard/11/?standalone=true&hide_title=1', // 학년별 평균 전공학점
+  GRADE_MAJOR_MAJOR: '/superset/dashboard/34/?native_filters_key=hwldKNEGkqA&standalone=true&hide_title=1', // 학과별 평균 전공학점
+  GRADE_MAJOR_YEAR: '/superset/dashboard/46/?native_filters_key=aAecodRhYPU&standalone=true&hide_title=1', // 학년별 평균 전공학점
   
   // 성적 > 교양학점
   GRADE_GENERAL_MAJOR: '/superset/dashboard/44/?native_filters_key=CeloaKpDAA4&standalone=true&hide_title=1', // 학과별 평균 교양학점
