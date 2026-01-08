@@ -30,8 +30,8 @@ export const DASHBOARD_PATHS = {
   // 학적 > 전과
   ACADEMIC_TRANSFER_IN_MAJOR: '/superset/dashboard/27/?native_filters_key=G7F88Z6qGfM&standalone=true&hide_title=1', // 학과별 전입 학생 수
   ACADEMIC_TRANSFER_OUT_MAJOR: '/superset/dashboard/2/?native_filters_key=iy5VOIC1PKE&standalone=true&hide_title=1', // 학과별 전출 학생 수
-  ACADEMIC_TRANSFER_IN_GRADE: '', // 학년별 전입 학생 수
-  ACADEMIC_TRANSFER_OUT_GRADE: '', // 학년별 전출 학생 수
+  ACADEMIC_TRANSFER_IN_GRADE: '/superset/dashboard/47/?native_filters_key=sp-TQj6EK9A&standalone=true&hide_title=1', // 학년별 전입 학생 수
+  ACADEMIC_TRANSFER_OUT_GRADE: '/superset/dashboard/39ad914e-239e-4677-ab03-d6949181d145/?native_filters_key=oODyjc209vM&standalone=true&hide_title=1', // 학년별 전출 학생 수
   
   // 학적 > 부복수전공
   ACADEMIC_DOUBLE_APPLY_MAJOR: '', // 신청학과별 학생 수
