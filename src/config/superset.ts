@@ -46,16 +46,16 @@ export const DASHBOARD_PATHS = {
   ACADEMIC_INTER_BELONG_GRADE: '', // 소속학과-학년별 학생 수
   
   // 성적 > 전체학점
-  GRADE_TOTAL_MAJOR: '/superset/dashboard/8/?native_filters_key=37adA_q5qyo&standalone=true&hide_title=1', // 학과별 평균 전체학점
-  GRADE_TOTAL_YEAR: '', // 학년별 평균 전체학점
+  GRADE_TOTAL_MAJOR: '/superset/dashboard/31/?native_filters_key=t47mWXlRQ7I&standalone=true&hide_title=1', // 학과별 평균 전체학점
+  GRADE_TOTAL_YEAR: '/superset/dashboard/0224899d-013e-4414-818f-dd56b67d66e0/?native_filters_key=bNrUeFPRyvE&standalone=true&hide_title=1', // 학년별 평균 전체학점
   
   // 성적 > 전공학점
   GRADE_MAJOR_MAJOR: '/superset/dashboard/10/?native_filters_key=b4mK3y4Ubrw&standalone=true&hide_title=1', // 학과별 평균 전공학점
   GRADE_MAJOR_YEAR: '/superset/dashboard/11/?standalone=true&hide_title=1', // 학년별 평균 전공학점
   
   // 성적 > 교양학점
-  GRADE_GENERAL_MAJOR: '', // 학과별 평균 교양학점
-  GRADE_GENERAL_YEAR: '', // 학년별 평균 교양학점
+  GRADE_GENERAL_MAJOR: '/superset/dashboard/44/?native_filters_key=CeloaKpDAA4&standalone=true&hide_title=1', // 학과별 평균 교양학점
+  GRADE_GENERAL_YEAR: '/superset/dashboard/33/?native_filters_key=U4K1OS7lIMw&standalone=true&hide_title=1', // 학년별 평균 교양학점
   
   // 졸업 > 졸업생
   GRADUATE_UNDERGRAD_MAJOR: '/superset/dashboard/19/?native_filters_key=LRD-VNeU6uI&standalone=true&hide_title=1', // 학과별 졸업자 수
