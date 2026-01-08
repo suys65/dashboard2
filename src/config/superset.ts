@@ -28,8 +28,8 @@ export const DASHBOARD_PATHS = {
   ACADEMIC_DROPOUT_GRADE: '/superset/dashboard/30/?native_filters_key=x_yubVCkKlM&standalone=true&hide_title=1', // 학년별 자퇴생 수
   
   // 학적 > 전과
-  ACADEMIC_TRANSFER_IN_MAJOR: '', // 학과별 전입 학생 수
-  ACADEMIC_TRANSFER_OUT_MAJOR: '/superset/dashboard/2/?native_filters_key=-YnJ4-MOMts&standalone=true&hide_title=1', // 학과별 전출 학생 수
+  ACADEMIC_TRANSFER_IN_MAJOR: '/superset/dashboard/27/?native_filters_key=G7F88Z6qGfM&standalone=true&hide_title=1', // 학과별 전입 학생 수
+  ACADEMIC_TRANSFER_OUT_MAJOR: '/superset/dashboard/2/?native_filters_key=iy5VOIC1PKE&standalone=true&hide_title=1', // 학과별 전출 학생 수
   ACADEMIC_TRANSFER_IN_GRADE: '', // 학년별 전입 학생 수
   ACADEMIC_TRANSFER_OUT_GRADE: '', // 학년별 전출 학생 수
   
