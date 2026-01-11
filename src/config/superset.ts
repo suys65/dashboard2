@@ -24,7 +24,7 @@ export const DASHBOARD_PATHS = {
   ACADEMIC_LEAVE_GRADE: '/superset/dashboard/54/?native_filters_key=SyiLXnajCCU&standalone=true&hide_title=1', // 학년별 휴복학생 수
   
   // 학적 > 자퇴
-  ACADEMIC_DROPOUT_MAJOR: '/superset/dashboard/7/?native_filters_key=AOKCcGeEZkU&standalone=true&hide_title=1', // 학과별 자퇴생 수
+  ACADEMIC_DROPOUT_MAJOR: '/superset/dashboard/7/?native_filters_key=kZb3RdMNt3M&standalone=true&hide_title=1', // 학과별 자퇴생 수
   ACADEMIC_DROPOUT_GRADE: '/superset/dashboard/55/?native_filters_key=RbBhgvIprd0&standalone=true&hide_title=1', // 학년별 자퇴생 수
   
   // 학적 > 전과
