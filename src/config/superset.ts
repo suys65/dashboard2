@@ -20,18 +20,18 @@ export const DASHBOARD_PATHS = {
   ADMISSION_GRADE_EXAM: '', // 전형별 신입생 성적
   
   // 학적 > 휴복학          
-  ACADEMIC_LEAVE_MAJOR: '/superset/dashboard/25/?native_filters_key=ZHVeYE6B86Q&standalone=true&hide_title=1', // 학과별 휴복학생 수
-  ACADEMIC_LEAVE_GRADE: '/superset/dashboard/28/?native_filters_key=Fn6ZsGSpxmE&standalone=true&hide_title=1', // 학년별 휴복학생 수
+  ACADEMIC_LEAVE_MAJOR: '/superset/dashboard/49/?native_filters_key=vzE95-gsLdM&standalone=true&hide_title=1', // 학과별 휴복학생 수
+  ACADEMIC_LEAVE_GRADE: '/superset/dashboard/54/?native_filters_key=SyiLXnajCCU&standalone=true&hide_title=1', // 학년별 휴복학생 수
   
   // 학적 > 자퇴
-  ACADEMIC_DROPOUT_MAJOR: '/superset/dashboard/29/?native_filters_key=0veDPUF_1iE&standalone=true&hide_title=1', // 학과별 자퇴생 수
-  ACADEMIC_DROPOUT_GRADE: '/superset/dashboard/30/?native_filters_key=x_yubVCkKlM&standalone=true&hide_title=1', // 학년별 자퇴생 수
+  ACADEMIC_DROPOUT_MAJOR: '/superset/dashboard/7/?native_filters_key=AOKCcGeEZkU&standalone=true&hide_title=1', // 학과별 자퇴생 수
+  ACADEMIC_DROPOUT_GRADE: '/superset/dashboard/55/?native_filters_key=RbBhgvIprd0&standalone=true&hide_title=1', // 학년별 자퇴생 수
   
   // 학적 > 전과
-  ACADEMIC_TRANSFER_IN_MAJOR: '/superset/dashboard/27/?native_filters_key=G7F88Z6qGfM&standalone=true&hide_title=1', // 학과별 전입 학생 수
-  ACADEMIC_TRANSFER_OUT_MAJOR: '/superset/dashboard/2/?native_filters_key=iy5VOIC1PKE&standalone=true&hide_title=1', // 학과별 전출 학생 수
-  ACADEMIC_TRANSFER_IN_GRADE: '/superset/dashboard/47/?native_filters_key=sp-TQj6EK9A&standalone=true&hide_title=1', // 학년별 전입 학생 수
-  ACADEMIC_TRANSFER_OUT_GRADE: '/superset/dashboard/39ad914e-239e-4677-ab03-d6949181d145/?native_filters_key=oODyjc209vM&standalone=true&hide_title=1', // 학년별 전출 학생 수
+  ACADEMIC_TRANSFER_IN_MAJOR: '/superset/dashboard/51/?native_filters_key=qSuKbYq0TzM&standalone=true&hide_title=1', // 학과별 전입 학생 수
+  ACADEMIC_TRANSFER_OUT_MAJOR: '/superset/dashboard/52/?native_filters_key=73Ll5ubMC8g&standalone=true&hide_title=1', // 학과별 전출 학생 수
+  ACADEMIC_TRANSFER_IN_GRADE: '/superset/dashboard/53/?native_filters_key=chihnlolge8&standalone=true&hide_title=1', // 학년별 전입 학생 수
+  ACADEMIC_TRANSFER_OUT_GRADE: '/superset/dashboard/50/?native_filters_key=-2hyHxvyWlU&standalone=true&hide_title=1', // 학년별 전출 학생 수
   
   // 학적 > 부복수전공
   ACADEMIC_DOUBLE_APPLY_MAJOR: '', // 신청학과별 학생 수
@@ -67,8 +67,8 @@ export const DASHBOARD_PATHS = {
   ETC_SATISFACTION_MAJOR: '', // 학과별 평균 교육 만족도
   
   // 기타 > 교직원 현황
-  ETC_STAFF_PROFESSOR: '/superset/dashboard/p/7Va03RXK5W4/?standalone=true&hide_title=1', // 학과별 교수 수
-  ETC_STAFF_ASSISTANT: '/superset/dashboard/p/q3aevw2KXdJ/?standalone=true&hide_title=1', // 학과별 조교 수
+  ETC_STAFF_PROFESSOR: '/superset/dashboard/23/?native_filters_key=ZIHa5fbv-yQ&standalone=true&hide_title=1', // 학과별 교수 수
+  ETC_STAFF_ASSISTANT: '/superset/dashboard/24/?native_filters_key=B-Z0u4w6eFg&standalone=true&hide_title=1', // 학과별 조교 수
 };
 
 // 전체 URL 생성 헬퍼 함수
