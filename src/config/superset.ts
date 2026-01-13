@@ -9,29 +9,29 @@ export const SUPERSET_BASE_URL =
 // 대시보드 경로 상수
 export const DASHBOARD_PATHS = {
   // 메인 화면
-  MAIN: '/superset/dashboard/58/?native_filters_key=UGMXVwHsAV4&standalone=true&hide_title=1',
+  MAIN: '/superset/dashboard/58/?standalone=true&hide_title=1',
   
   // 입학 > 신입생 충원
-  ADMISSION_RECRUIT_MAJOR: '/superset/dashboard/16/?native_filters_key=uwah6xYekg4&standalone=true&hide_title=1', // 학과별 신입생 수
-  ADMISSION_RECRUIT_EXAM: '/superset/dashboard/9/?native_filters_key=x9ML0NYzibc&standalone=true&hide_title=1', // 전형별 신입생 수
+  ADMISSION_RECRUIT_MAJOR: '/superset/dashboard/16/?standalone=true&hide_title=1', // 학과별 신입생 수
+  ADMISSION_RECRUIT_EXAM: '/superset/dashboard/9/?standalone=true&hide_title=1', // 전형별 신입생 수
   
   // 입학 > 신입생 성적
-  ADMISSION_GRADE_MAJOR: '/superset/dashboard/17/?native_filters_key=9MqGGYxyfUU&standalone=true&hide_title=1', // 학과별 신입생 성적
+  ADMISSION_GRADE_MAJOR: '/superset/dashboard/17/?standalone=true&hide_title=1', // 학과별 신입생 성적
   ADMISSION_GRADE_EXAM: '', // 전형별 신입생 성적
   
   // 학적 > 휴복학          
-  ACADEMIC_LEAVE_MAJOR: '/superset/dashboard/49/?native_filters_key=vzE95-gsLdM&standalone=true&hide_title=1', // 학과별 휴복학생 수
-  ACADEMIC_LEAVE_GRADE: '/superset/dashboard/54/?native_filters_key=SyiLXnajCCU&standalone=true&hide_title=1', // 학년별 휴복학생 수
+  ACADEMIC_LEAVE_MAJOR: '/superset/dashboard/49/?standalone=true&hide_title=1', // 학과별 휴복학생 수
+  ACADEMIC_LEAVE_GRADE: '/superset/dashboard/54/?standalone=true&hide_title=1', // 학년별 휴복학생 수
   
   // 학적 > 자퇴
-  ACADEMIC_DROPOUT_MAJOR: '/superset/dashboard/7/?native_filters_key=kZb3RdMNt3M&standalone=true&hide_title=1', // 학과별 자퇴생 수
-  ACADEMIC_DROPOUT_GRADE: '/superset/dashboard/55/?native_filters_key=RbBhgvIprd0&standalone=true&hide_title=1', // 학년별 자퇴생 수
+  ACADEMIC_DROPOUT_MAJOR: '/superset/dashboard/7/?standalone=true&hide_title=1', // 학과별 자퇴생 수
+  ACADEMIC_DROPOUT_GRADE: '/superset/dashboard/55/?standalone=true&hide_title=1', // 학년별 자퇴생 수
   
   // 학적 > 전과
-  ACADEMIC_TRANSFER_IN_MAJOR: '/superset/dashboard/51/?native_filters_key=qSuKbYq0TzM&standalone=true&hide_title=1', // 학과별 전입 학생 수
-  ACADEMIC_TRANSFER_OUT_MAJOR: '/superset/dashboard/52/?native_filters_key=73Ll5ubMC8g&standalone=true&hide_title=1', // 학과별 전출 학생 수
-  ACADEMIC_TRANSFER_IN_GRADE: '/superset/dashboard/53/?native_filters_key=chihnlolge8&standalone=true&hide_title=1', // 학년별 전입 학생 수
-  ACADEMIC_TRANSFER_OUT_GRADE: '/superset/dashboard/50/?native_filters_key=-2hyHxvyWlU&standalone=true&hide_title=1', // 학년별 전출 학생 수
+  ACADEMIC_TRANSFER_IN_MAJOR: '/superset/dashboard/51/?standalone=true&hide_title=1', // 학과별 전입 학생 수
+  ACADEMIC_TRANSFER_OUT_MAJOR: '/superset/dashboard/52/?standalone=true&hide_title=1', // 학과별 전출 학생 수
+  ACADEMIC_TRANSFER_IN_GRADE: '/superset/dashboard/53/?standalone=true&hide_title=1', // 학년별 전입 학생 수
+  ACADEMIC_TRANSFER_OUT_GRADE: '/superset/dashboard/50/?standalone=true&hide_title=1', // 학년별 전출 학생 수
   
   // 학적 > 부복수전공
   ACADEMIC_DOUBLE_APPLY_MAJOR: '', // 신청학과별 학생 수
@@ -46,29 +46,29 @@ export const DASHBOARD_PATHS = {
   ACADEMIC_INTER_BELONG_GRADE: '', // 소속학과-학년별 학생 수
   
   // 성적 > 전체학점
-  GRADE_TOTAL_MAJOR: '/superset/dashboard/31/?native_filters_key=t47mWXlRQ7I&standalone=true&hide_title=1', // 학과별 평균 전체학점
+  GRADE_TOTAL_MAJOR: '/superset/dashboard/31/?&standalone=true&hide_title=1', // 학과별 평균 전체학점
   GRADE_TOTAL_YEAR: '/superset/dashboard/0224899d-013e-4414-818f-dd56b67d66e0/?native_filters_key=bNrUeFPRyvE&standalone=true&hide_title=1', // 학년별 평균 전체학점
   
   // 성적 > 전공학점
-  GRADE_MAJOR_MAJOR: '/superset/dashboard/34/?native_filters_key=hwldKNEGkqA&standalone=true&hide_title=1', // 학과별 평균 전공학점
-  GRADE_MAJOR_YEAR: '/superset/dashboard/46/?native_filters_key=aAecodRhYPU&standalone=true&hide_title=1', // 학년별 평균 전공학점
+  GRADE_MAJOR_MAJOR: '/superset/dashboard/34/?standalone=true&hide_title=1', // 학과별 평균 전공학점
+  GRADE_MAJOR_YEAR: '/superset/dashboard/46/?standalone=true&hide_title=1', // 학년별 평균 전공학점
   
   // 성적 > 교양학점
-  GRADE_GENERAL_MAJOR: '/superset/dashboard/44/?native_filters_key=CeloaKpDAA4&standalone=true&hide_title=1', // 학과별 평균 교양학점
-  GRADE_GENERAL_YEAR: '/superset/dashboard/33/?native_filters_key=U4K1OS7lIMw&standalone=true&hide_title=1', // 학년별 평균 교양학점
+  GRADE_GENERAL_MAJOR: '/superset/dashboard/59/?standalone=true&hide_title=1', // 학과별 평균 교양학점
+  GRADE_GENERAL_YEAR: '/superset/dashboard/60/?standalone=true&hide_title=1', // 학년별 평균 교양학점
   
   // 졸업 > 졸업생
-  GRADUATE_UNDERGRAD_MAJOR: '/superset/dashboard/19/?native_filters_key=w9RwpbOJTNI&standalone=true&hide_title=1', // 학과별 졸업자 수
+  GRADUATE_UNDERGRAD_MAJOR: '/superset/dashboard/19/?standalone=true&hide_title=1', // 학과별 졸업자 수
   
   // 졸업 > 대학원
-  GRADUATE_SCHOOL_MAJOR: '/superset/dashboard/18/?native_filters_key=fTd8cotDBns&standalone=true&hide_title=1', // 학과별 대학원 진학 학생 추이
+  GRADUATE_SCHOOL_MAJOR: '/superset/dashboard/18/?standalone=true&hide_title=1', // 학과별 대학원 진학 학생 추이
   
   // 기타 > 교육만족도
   ETC_SATISFACTION_MAJOR: '', // 학과별 평균 교육 만족도
   
   // 기타 > 교직원 현황
-  ETC_STAFF_PROFESSOR: '/superset/dashboard/23/?native_filters_key=ZIHa5fbv-yQ&standalone=true&hide_title=1', // 학과별 교수 수
-  ETC_STAFF_ASSISTANT: '/superset/dashboard/24/?native_filters_key=B-Z0u4w6eFg&standalone=true&hide_title=1', // 학과별 조교 수
+  ETC_STAFF_PROFESSOR: '/superset/dashboard/23/?standalone=true&hide_title=1', // 학과별 교수 수
+  ETC_STAFF_ASSISTANT: '/superset/dashboard/24/?standalone=true&hide_title=1', // 학과별 조교 수
 };
 
 // 전체 URL 생성 헬퍼 함수
