@@ -46,8 +46,8 @@ export const DASHBOARD_PATHS = {
   ACADEMIC_INTER_BELONG_GRADE: '', // 소속학과-학년별 학생 수
   
   // 성적 > 전체학점
-  GRADE_TOTAL_MAJOR: '/superset/dashboard/31/?&standalone=true&hide_title=1', // 학과별 평균 전체학점
-  GRADE_TOTAL_YEAR: '/superset/dashboard/0224899d-013e-4414-818f-dd56b67d66e0/?native_filters_key=bNrUeFPRyvE&standalone=true&hide_title=1', // 학년별 평균 전체학점
+  GRADE_TOTAL_MAJOR: '/superset/dashboard/57/?standalone=true&hide_title=1', // 학과별 평균 전체학점
+  GRADE_TOTAL_YEAR: '/superset/dashboard/61/?standalone=true&hide_title=1', // 학년별 평균 전체학점
   
   // 성적 > 전공학점
   GRADE_MAJOR_MAJOR: '/superset/dashboard/34/?standalone=true&hide_title=1', // 학과별 평균 전공학점
