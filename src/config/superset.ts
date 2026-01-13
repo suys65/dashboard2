@@ -9,7 +9,7 @@ export const SUPERSET_BASE_URL =
 // 대시보드 경로 상수
 export const DASHBOARD_PATHS = {
   // 메인 화면
-  MAIN: '/superset/dashboard/12/?standalone=true&hide_title=1',
+  MAIN: '/superset/dashboard/58/?native_filters_key=UGMXVwHsAV4&standalone=true&hide_title=1',
   
   // 입학 > 신입생 충원
   ADMISSION_RECRUIT_MAJOR: '/superset/dashboard/16/?native_filters_key=uwah6xYekg4&standalone=true&hide_title=1', // 학과별 신입생 수
@@ -58,7 +58,7 @@ export const DASHBOARD_PATHS = {
   GRADE_GENERAL_YEAR: '/superset/dashboard/33/?native_filters_key=U4K1OS7lIMw&standalone=true&hide_title=1', // 학년별 평균 교양학점
   
   // 졸업 > 졸업생
-  GRADUATE_UNDERGRAD_MAJOR: '/superset/dashboard/19/?native_filters_key=LRD-VNeU6uI&standalone=true&hide_title=1', // 학과별 졸업자 수
+  GRADUATE_UNDERGRAD_MAJOR: '/superset/dashboard/19/?native_filters_key=w9RwpbOJTNI&standalone=true&hide_title=1', // 학과별 졸업자 수
   
   // 졸업 > 대학원
   GRADUATE_SCHOOL_MAJOR: '/superset/dashboard/18/?native_filters_key=fTd8cotDBns&standalone=true&hide_title=1', // 학과별 대학원 진학 학생 추이
