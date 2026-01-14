@@ -34,10 +34,10 @@ export const DASHBOARD_PATHS = {
   ACADEMIC_TRANSFER_OUT_GRADE: '/superset/dashboard/50/?standalone=true&hide_title=1', // 학년별 전출 학생 수
   
   // 학적 > 부복수전공
-  ACADEMIC_DOUBLE_APPLY_MAJOR: '', // 신청학과별 학생 수
-  ACADEMIC_DOUBLE_BELONG_MAJOR: '', // 소속학과별 학생 수
-  ACADEMIC_DOUBLE_APPLY_GRADE: '', // 신청학과-학년별 학생 수
-  ACADEMIC_DOUBLE_BELONG_GRADE: '', // 소속학과-학년별 학생 수
+  ACADEMIC_DOUBLE_APPLY_MAJOR: '/superset/dashboard/66/?standalone=true&hide_title=1', // 신청학과별 학생 수
+  ACADEMIC_DOUBLE_BELONG_MAJOR: '/superset/dashboard/65/?standalone=true&hide_title=1', // 소속학과별 학생 수
+  ACADEMIC_DOUBLE_APPLY_GRADE: '/superset/dashboard/67/?standalone=true&hide_title=1', // 신청학과-학년별 학생 수
+  ACADEMIC_DOUBLE_BELONG_GRADE: '/superset/dashboard/68/?standalone=true&hide_title=1', // 소속학과-학년별 학생 수
   
   // 학적 > 연계융합전공
   ACADEMIC_INTER_MAJOR: '', // 연계/융합전공별 학생 수
