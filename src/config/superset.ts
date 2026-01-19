@@ -64,7 +64,7 @@ export const DASHBOARD_PATHS = {
   GRADUATE_SCHOOL_MAJOR: '/superset/dashboard/18/?standalone=true&hide_title=1', // 학과별 대학원 진학 학생 추이
   
   // 기타 > 교육만족도
-  ETC_SATISFACTION_MAJOR: '', // 학과별 평균 교육 만족도
+  ETC_SATISFACTION_MAJOR: '/superset/dashboard/62/?standalone=true&hide_title=1', // 학과별 평균 교육 만족도
   
   // 기타 > 교직원 현황
   ETC_STAFF_PROFESSOR: '/superset/dashboard/23/?standalone=true&hide_title=1', // 학과별 교수 수
