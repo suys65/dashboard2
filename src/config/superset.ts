@@ -16,8 +16,8 @@ export const DASHBOARD_PATHS = {
   ADMISSION_RECRUIT_EXAM: '/superset/dashboard/9/?standalone=true&hide_title=1', // 전형별 신입생 수
   
   // 입학 > 신입생 성적
-  ADMISSION_GRADE_MAJOR: '/superset/dashboard/17/?standalone=true&hide_title=1', // 학과별 신입생 성적
-  ADMISSION_GRADE_EXAM: '', // 전형별 신입생 성적
+  ADMISSION_GRADE_MAJOR: '/superset/dashboard/63/?standalone=true&hide_title=1', // 학과별 신입생 성적
+  ADMISSION_GRADE_EXAM: '/superset/dashboard/64/?standalone=true&hide_title=1', // 전형별 신입생 성적
   
   // 학적 > 휴복학          
   ACADEMIC_LEAVE_MAJOR: '/superset/dashboard/49/?standalone=true&hide_title=1', // 학과별 휴복학생 수
