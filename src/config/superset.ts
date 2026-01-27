@@ -40,7 +40,7 @@ export const DASHBOARD_PATHS = {
   ACADEMIC_DOUBLE_BELONG_GRADE: '/superset/dashboard/32/?standalone=true&hide_title=1', // 소속학과-학년별 학생 수
   
   // 학적 > 연계융합전공
-  ACADEMIC_INTER_MAJOR: '/superset/dashboard/69/?standalone=true&hide_title=1', // 연계/융합전공별 학생 수
+  ACADEMIC_INTER_MAJOR: '/superset/dashboard/33/?standalone=true&hide_title=1', // 연계/융합전공별 학생 수
   ACADEMIC_INTER_BELONG_MAJOR: '/superset/dashboard/8/?standalone=true&hide_title=1', // 소속전공별 학생 수
   ACADEMIC_INTER_MAJOR_GRADE: '/superset/dashboard/9/?standalone=true&hide_title=1', // 연계/융합전공-학년별 학생 수
   ACADEMIC_INTER_BELONG_GRADE: '/superset/dashboard/7/?standalone=true&hide_title=1', // 소속학과-학년별 학생 수
