@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const SERVER_URL = 'https://inunity-server.squidjiny.com';
+const SERVER_URL = 'https://dashboard.inu.ac.kr/superset';
 
 // axios 인스턴스 생성
 export const api = axios.create({
