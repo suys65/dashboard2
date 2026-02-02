@@ -166,7 +166,7 @@ const AcademicSidebar: React.FC<Props> = ({ selected, onSelect }) => {
                   if (location.pathname !== '/academic/double-major') navigate('/academic/double-major');
                 }}
               >
-                신청학과-학년별 학생 수
+                신청학과<br />-학년별 학생 수
               </button>
             </li>
             <li>
@@ -177,7 +177,7 @@ const AcademicSidebar: React.FC<Props> = ({ selected, onSelect }) => {
                   if (location.pathname !== '/academic/double-major') navigate('/academic/double-major');
                 }}
               >
-                소속학과-학년별 학생 수
+                소속학과<br />-학년별 학생 수
               </button>
             </li>
           </ul>
@@ -217,7 +217,7 @@ const AcademicSidebar: React.FC<Props> = ({ selected, onSelect }) => {
                   if (location.pathname !== '/academic/interdisciplinary') navigate('/academic/interdisciplinary');
                 }}
               >
-                연계/융합전공-학년별 학생 수
+                연계/융합전공<br />-학년별 학생 수
               </button>
             </li>
             <li>
@@ -228,7 +228,7 @@ const AcademicSidebar: React.FC<Props> = ({ selected, onSelect }) => {
                   if (location.pathname !== '/academic/interdisciplinary') navigate('/academic/interdisciplinary');
                 }}
               >
-                소속학과-학년별 학생 수
+                소속학과<br />-학년별 학생 수
               </button>
             </li>
           </ul>

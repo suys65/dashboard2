@@ -8,9 +8,9 @@
 :root {
     /* 레이아웃 변수 */
     --header-height: 70px;
-    --sidebar-width: 200px;
-    --sidebar-left-margin: 110px;
-    --content-left-margin: 325px;
+    --sidebar-width: 215px;
+    --sidebar-left-margin: 100px;
+    --content-left-margin: 330px;
     --container-max-width: 1600px;
     
     /* 간격 변수 */
@@ -48,21 +48,30 @@
     --transition-normal: 0.25s ease;
 }
 
-/* 태블릿 크기 변수 */
+/* 대형 태블릿 변수 */
 @media (max-width: 1440px) {
     :root {
-        --sidebar-width: 190px;
+        --sidebar-width: 210px;
         --sidebar-left-margin: 80px;
-        --content-left-margin: 290px;
+        --content-left-margin: 305px;
+    }
+}
+
+/* 중형 데스크톱 변수 */
+@media (max-width: 1320px) {
+    :root {
+        --sidebar-width: 200px;
+        --sidebar-left-margin: 60px;
+        --content-left-margin: 275px;
     }
 }
 
 /* 소형 데스크톱/태블릿 변수 */
 @media (max-width: 1200px) {
     :root {
-        --sidebar-width: 170px;
-        --sidebar-left-margin: 50px;
-        --content-left-margin: 240px;
+        --sidebar-width: 190px;
+        --sidebar-left-margin: 40px;
+        --content-left-margin: 245px;
         --spacing-xl: 20px;
     }
 }
@@ -70,9 +79,9 @@
 /* 태블릿 변수 */
 @media (max-width: 1024px) {
     :root {
-        --sidebar-width: 150px;
-        --sidebar-left-margin: 15px;
-        --content-left-margin: 185px;
+        --sidebar-width: 175px;
+        --sidebar-left-margin: 20px;
+        --content-left-margin: 210px;
         --spacing-xl: 15px;
     }
 }
@@ -331,7 +340,7 @@ header {
     text-decoration: none;
     color: var(--text-secondary);
     display: block;
-    padding: clamp(8px, 1vw, 10px) clamp(10px, 1.5vw, 15px);
+    padding: clamp(8px, 1vw, 10px) clamp(10px, 1.5vw, 15px) clamp(8px, 1vw, 10px) clamp(5px, 0.5vw, 8px);
     background-color: transparent;
     width: 100%;
     border: none;
@@ -351,7 +360,7 @@ header {
     color: #fff;
     background-color: var(--primary-color);
     border: none;
-    padding: clamp(8px, 1vw, 10px) clamp(10px, 1.5vw, 15px);
+    padding: clamp(8px, 1vw, 10px) clamp(10px, 1.5vw, 15px) clamp(8px, 1vw, 10px) clamp(5px, 0.5vw, 8px);
     width: 100%;
     border-radius: 6px;
     transition: all var(--transition-normal);
@@ -573,15 +582,15 @@ header {
     transform: rotate(-45deg) translate(7px, -7px);
 }
 
-/* 1300px 이상에서는 햄버거 버튼 숨김 */
-@media (min-width: 1301px) {
+/* 1100px 이상에서는 햄버거 버튼 숨김 */
+@media (min-width: 1101px) {
     .hamburger-btn {
         display: none !important;
     }
 }
 
-/* 1300px 이하부터 햄버거 메뉴 표시 */
-@media (max-width: 1300px) {
+/* 1100px 이하부터 햄버거 메뉴 표시 (사이드바 숨김과 동시) */
+@media (max-width: 1100px) {
     .hamburger-btn {
         display: flex;
     }
@@ -980,23 +989,15 @@ header {
     }
 }
 
-/* 900px - 작은 태블릿 가로 */
-@media (max-width: 900px) {
-    .nav-link {
-        padding: 10px clamp(6px, 1.5vw, 15px);
-        font-size: 15px;
-    }
-}
-
-/* 1300px 이하 - 로그아웃 버튼 전부 숨김 */
-@media (max-width: 1300px) {
+/* 1100px 이하 - 로그아웃 버튼 전부 숨김 */
+@media (max-width: 1100px) {
     .header-right {
         display: none !important;
     }
 }
 
-/* 900px 이하 - 사이드바 숨김, 메인 콘텐츠 전체 너비 */
-@media (max-width: 900px) {
+/* 1100px 이하 - 사이드바 숨김, 메인 콘텐츠 전체 너비 */
+@media (max-width: 1100px) {
     :root {
         --sidebar-left-margin: 20px;
         --content-left-margin: 20px;
@@ -1021,31 +1022,8 @@ header {
     }
 }
 
-/* 1300px 이하 - 햄버거에 학번+로그아웃만 */
-@media (max-width: 1300px) {
-    /* 모바일 사용자 섹션 설정 */
-    .mobile-user-section {
-        display: none;
-        position: fixed;
-        top: var(--header-height);
-        right: -200px;
-        width: 200px;
-        height: calc(100vh - var(--header-height));
-        list-style: none;
-        padding: 15px var(--spacing-lg);
-        background-color: white;
-        z-index: 1101;
-        box-shadow: -2px 0 10px rgba(0, 0, 0, 0.3);
-        transition: right var(--transition-normal);
-    }
-    
-    /* 햄버거 열리면 사용자 섹션 표시 */
-    .main-nav.open .mobile-user-section {
-        display: block;
-        right: 0;
-    }
-    
-    /* 1300px 이하에서 모바일 사용자 정보 레이아웃 */
+/* 1100px 이하 - 모바일 사용자 정보 스타일 */
+@media (max-width: 1100px) {
     .mobile-user-info {
         display: flex;
         flex-direction: column;
@@ -1084,32 +1062,9 @@ header {
     }
 }
 
-/* 768px 이하 - 상위메뉴도 햄버거로 */
-@media (max-width: 768px) {
-    :root {
-        --header-height: 60px;
-    }
-    
-    body {
-        padding-top: var(--header-height);
-    }
-    
-    header {
-        position: fixed;
-    }
-    
-    .header-content {
-        flex-wrap: nowrap;
-        height: var(--header-height);
-        padding: 0 15px;
-        justify-content: space-between;
-    }
-    
-    .logo-section {
-        flex-shrink: 0;
-    }
-    
-    /* 768px 이하에서는 main-nav를 드로어로 */
+/* 1100px 이하 - 상위메뉴도 햄버거로 */
+@media (max-width: 1100px) {
+    /* 1100px 이하에서는 main-nav를 드로어로 */
     .main-nav {
         position: fixed;
         top: var(--header-height);
@@ -1143,7 +1098,7 @@ header {
         margin: 0;
     }
     
-    /* 768px 이하에서는 사용자 섹션이 드로어 맨 위에 */
+    /* 1100px 이하에서는 사용자 섹션이 드로어 맨 위에 */
     .mobile-user-section {
         position: static !important;
         width: 100% !important;
@@ -1179,7 +1134,7 @@ header {
         border-left: 3px solid var(--primary-color);
     }
     
-    /* 768px 이하에서는 hover 동작 비활성화 */
+    /* 1100px 이하에서는 hover 동작 비활성화 */
     .nav-item:hover .nav-dropdown {
         display: none;
     }
@@ -1210,8 +1165,6 @@ header {
         border-left-color: var(--primary-color);
     }
     
-    /* 우선순위 낮은 요소는 이미 1100px에서 숨김 처리됨 */
-    
     .breadcrumb {
         position: relative;
         top: 0;
@@ -1221,6 +1174,32 @@ header {
     
     .content-buttons {
         gap: 8px;
+    }
+}
+
+/* 768px 이하 - 추가 모바일 스타일 */
+@media (max-width: 768px) {
+    :root {
+        --header-height: 60px;
+    }
+    
+    body {
+        padding-top: var(--header-height);
+    }
+    
+    header {
+        position: fixed;
+    }
+    
+    .header-content {
+        flex-wrap: nowrap;
+        height: var(--header-height);
+        padding: 0 15px;
+        justify-content: space-between;
+    }
+    
+    .logo-section {
+        flex-shrink: 0;
     }
     
     /* 로그인 카드 */
@@ -1297,14 +1276,14 @@ header {
     opacity: 1;
 }
 
-/* 1300px 이상에서는 오버레이 완전히 숨김 */
-@media (min-width: 1301px) {
+/* 1100px 이상에서는 오버레이 완전히 숨김 */
+@media (min-width: 1101px) {
     .mobile-overlay {
         display: none !important;
     }
 }
 
-@media (max-width: 1300px) {
+@media (max-width: 1100px) {
     .mobile-overlay {
         display: none;
     }

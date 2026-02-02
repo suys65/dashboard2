@@ -48,7 +48,7 @@ const GraduateSidebar: React.FC<Props> = ({ selected, onSelect }) => {
                   if (location.pathname !== '/graduate/grad-school') navigate('/graduate/grad-school');
                 }}
               >
-                학과별 자대 대학원 진학 학생 수
+                학과별 자대 대학원<br />진학 학생 수
               </button>
             </li>
           </ul>
