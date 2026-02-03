@@ -75,17 +75,9 @@ const SupersetEmbed = () => {
     <div className="dashboard-start">
       <iframe
         src={iframeSrc}
-        width="100%"
-        height="100%"
-        frameBorder={0}
         title="Superset Dashboard"
         referrerPolicy="no-referrer"
         loading="lazy"
-        style={{
-          minHeight: '600px',
-          border: 'none',
-          display: 'block'
-        }}
       />
     </div>
   );

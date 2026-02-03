@@ -57,17 +57,9 @@ const GraduateMain: React.FC<Props> = ({ submenu, selected, onSelect }) => {
         {currentDashboard.url ? (
           <iframe
             src={getDashboardUrl(currentDashboard.url)}
-            width="100%"
-            height="100%"
-            frameBorder={0}
             title={currentDashboard.title}
             referrerPolicy="no-referrer"
             loading="lazy"
-            style={{
-              minHeight: '700px',
-              border: 'none',
-              display: 'block'
-            }}
           />
         ) : (
           <div style={{
